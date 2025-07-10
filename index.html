@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Portfolio - Meet2197</title>
+    <link rel="stylesheet" href="styles/globals.css">
+    <link rel="stylesheet" href="styles/terminal.css">
+</head>
+<body>
+    <div class="container">
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="btn close"></div>
+                    <div class="btn minimize"></div>
+                    <div class="btn maximize"></div>
+                </div>
+                <div class="terminal-title">visitor@meet2197:~$</div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-content">
+                    <div class="intro">
+                        <p>Type 'help' to see available commands.</p>
+                    </div>
+                    <div class="output" id="output"></div>
+                    <div class="input-line">
+                        <span class="prompt">visitor@meet2197:~$ </span>
+                        <input type="text" id="terminal-input" autofocus autocomplete="off">
+                    </div>
+                </div>
+                <div class="command-buttons">
+                    <button class="cmd-btn" data-command="about">about</button>
+                    <button class="cmd-btn" data-command="skills">skills</button>
+                    <button class="cmd-btn" data-command="projects">projects</button>
+                    <button class="cmd-btn" data-command="contact">contact</button>
+                    <button class="cmd-btn" data-command="resume">resume</button>
+                    <button class="cmd-btn" data-command="github">github</button>
+                    <button class="cmd-btn" data-command="linkedin">linkedin</button>
+                    <button class="cmd-btn" data-command="clear">clear</button>
+                    <button class="cmd-btn" data-command="help">help</button>
+                    <button class="cmd-btn" data-command="theme">theme</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
