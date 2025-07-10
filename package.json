@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "A personal portfolio site with GitHub Pages deployment and dark mode.",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  }
+}
