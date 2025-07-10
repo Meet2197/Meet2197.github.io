@@ -77,7 +77,7 @@ class TerminalPortfolio {
 ║                    Welcome to Meet2197's Portfolio           ║
 ║                                                              ║
 ║  Type 'help' to see available commands or click the buttons  ║
-║  on the right to navigate through my portfolio.             ║
+║  on the right to navigate through my portfolio.              ║
 ╚══════════════════════════════════════════════════════════════╝
         `;
         this.addToOutput(welcome, 'info');
