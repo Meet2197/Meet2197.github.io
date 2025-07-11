@@ -40,15 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Frameworks & Libraries:</strong></p>
                 <ul>
                     <li>React.js - Interactive UIs</li>
-                    <li>Node.js - Server-side applications</li>
-                    <li>Vue.js - Progressive web apps</li>
-                    <li>Chart.js - Data visualization</li>
-                    <li>Firebase - Real-time databases</li>
                 </ul>
                 <p><strong>Scientific & Data Tools:</strong></p>
                 <ul>
                     <li>LIMS Systems - Laboratory data management</li>
-                    <li>MongoDB - NoSQL databases</li>
                     <li>APIs - RESTful services</li>
                     <li>Git & GitHub - Version control</li>
                     <li>JSON Processing - Data interchange</li>
@@ -151,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>$ cat resume.pdf</h3>
                 <p><strong>Current Position:</strong></p>
                 <ul>
-                    <li>🏢 Data Steward at DFG cluster of excellence</li>
+                    <li>🏢 Data Steward</li>
                     <li>🎯 Physics of Life, TU Dresden</li>
                     <li>📍 Dresden, Germany</li>
                 </ul>
@@ -180,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Technologies & Tools:</strong></p>
                 <ul>
                     <li>Languages: JavaScript, Python, Java, R, HTML/CSS</li>
-                    <li>Frameworks: React.js, Node.js, Vue.js</li>
+                    <li>Frameworks: React.js</li>
                     <li>Databases: Postgres</li>
                     <li>Tools: Git, GitHub, Gitlab</li>
                 </ul>
