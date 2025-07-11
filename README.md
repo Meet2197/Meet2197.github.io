@@ -1,6 +1,6 @@
 # 🌐 Meet Bhatt's Portfolio
 
-Welcome to my professional portfolio! I’m a **Data Steward** with 3+ years of experience specializing in:
+Welcome to my professional portfolio!
 
 - 🧬 **Bioinformatics & Computational Biology**
 - 🧪 **LIMS (Laboratory Information Management Systems)**
@@ -13,7 +13,7 @@ This portfolio highlights my journey, projects, and research contributions in th
 
 ## 🚀 About Me
 
-🎓 **Current Role**: Data Steward at *Physics of Life*, TU Dresden  
+🎓 **Data Steward** at *Physics of Life*, TU Dresden  
 🔬 **Background**: Master’s degree in Bioinformatics | Focused on data stewardship, FAIR data principles, and scientific software  
 🛠️ **Passion**: Building tools that make science more reproducible, scalable, and accessible
 
