@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Frameworks & Libraries:</strong></p>
                 <ul>
                     <li>React.js - Interactive UIs</li>
+                    <li>Node.js - Server-side applications</li>
                 </ul>
                 <p><strong>Scientific & Data Tools:</strong></p>
                 <ul>
@@ -127,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>🏢 <strong>Position:</strong> Data Steward, Physics of Life, TU Dresden</p>
                 <p>Let's connect! You can reach me through:</p>
                 <ul>
-                    <li>📧 Email: <a href="mailto:meet.bhatt@etu.unice.fr">meet.bhatt@etu.unice.fr</a></li>
+                    <li>📧 Email: <a href="mailto:eet.bhatt@etu.unice.fr ">meet.bhatt@etu.unice.fr </a></li>
                     <li>🔗 LinkedIn: <a href="https://linkedin.com/in/meet2197" target="_blank">linkedin.com/in/meet2197</a></li>
                     <li>🐙 GitHub: <a href="https://github.com/Meet2197" target="_blank">github.com/Meet2197</a></li>
                 </ul>
@@ -146,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>$ cat resume.pdf</h3>
                 <p><strong>Current Position:</strong></p>
                 <ul>
-                    <li>🏢 Data Steward</li>
+                    <li>🏢 Data Steward at DFG cluster of excellence</li>
                     <li>🎯 Physics of Life, TU Dresden</li>
                     <li>📍 Dresden, Germany</li>
                 </ul>
@@ -175,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Technologies & Tools:</strong></p>
                 <ul>
                     <li>Languages: JavaScript, Python, Java, R, HTML/CSS</li>
-                    <li>Frameworks: React.js</li>
+                    <li>Frameworks: React.js, Node.js, Vue.js</li>
                     <li>Databases: Postgres</li>
                     <li>Tools: Git, GitHub, Gitlab</li>
                 </ul>
@@ -420,30 +421,44 @@ document.addEventListener('DOMContentLoaded', () => {
         button.innerHTML = '<span class="button-text">⏳ Preparing...</span>';
         button.disabled = true;
         
-        setTimeout(() => {
-            button.innerHTML = originalContent;
-            button.disabled = false;
-            
-            const filePath = 'assets/Meet2197_Resume.pdf'; // Ensure your PDF is here
-            // Check if file exists (basic check, could be more robust)
-            fetch(filePath, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        const link = document.createElement('a');
-                        link.href = filePath;
-                        link.download = 'Meet2197_Resume.pdf';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    } else {
-                        showResumeUploadInstructions();
-                    }
-                })
-                .catch(() => showResumeUploadInstructions());
-        }, 1500);
+        const filePath = 'assets/Meet2197_Resume.pdf'; // Ensure your PDF is here
+        
+        // Use fetch to check if the file exists and is accessible
+        fetch(filePath, { method: 'HEAD' })
+            .then(response => {
+                if (response.ok) {
+                    // File exists, proceed with download
+                    const link = document.createElement('a');
+                    link.href = filePath;
+                    link.download = 'Meet2197_Resume.pdf'; // Suggested file name
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    console.log("Resume download initiated successfully.");
+                } else {
+                    // File not found or inaccessible (e.g., 404, CORS issue)
+                    console.error(`Error ${response.status} fetching resume file. Check path or server configuration.`);
+                    showResumeUploadInstructions();
+                }
+            })
+            .catch(error => {
+                // Network error, CORS error, or file not found if local file://
+                console.error("Failed to fetch resume file. This might be due to CORS/security restrictions when running locally.", error);
+                showResumeUploadInstructions();
+            })
+            .finally(() => {
+                // Reset button state after attempt
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.disabled = false;
+                }, 500); // Short delay for visual feedback
+            });
     }
 
     function previewResume() {
+        const filePath = 'assets/Meet2197_Resume.pdf'; // Ensure your PDF is here
+        
+        // Attempt to create and open the modal
         const modal = document.createElement('div');
         modal.className = 'resume-modal'; // Renamed class
         modal.innerHTML = `
@@ -453,9 +468,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="resume-modal-close" onclick="closeResumeModal()">&times;</button>
                 </div>
                 <div class="resume-modal-body">
-                    <iframe src="assets/Meet2197_Resume.pdf" width="100%" height="600px" frameborder="0">
-                        <p>Your browser does not support PDFs.
-                        <a href="assets/Meet2197_Resume.pdf" target="_blank">Download the PDF</a>.</p>
+                    <iframe src="${filePath}" width="100%" height="600px" frameborder="0">
+                        <p>Your browser does not support PDFs directly in this window.
+                        <a href="${filePath}" target="_blank">Click here to download/view the PDF directly</a>.</p>
                     </iframe>
                 </div>
             </div>
@@ -467,6 +482,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeResumeModal();
             }
         });
+
+        // Add a simple check for iframe load (not foolproof for all errors)
+        const iframe = modal.querySelector('iframe');
+        iframe.onload = () => console.log(`Resume preview loaded from: ${filePath}`);
+        iframe.onerror = () => {
+            console.error(`Failed to load resume preview from: ${filePath}. This often happens with local file:// paths due to browser security.`);
+            // Optionally, remove the iframe and show instructions if it fails
+            // modal.querySelector('.resume-modal-body').innerHTML = `
+            //     <p>Could not load PDF preview. This might be due to browser security restrictions when running locally.</p>
+            //     <p><a href="${filePath}" target="_blank">Click here to download/view the PDF directly</a>.</p>
+            // `;
+        };
+        console.log(`Attempting to preview resume from: ${filePath}`);
     }
 
     function closeResumeModal() {
@@ -487,10 +515,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="resume-modal-body">
                     <div class="resume-instructions">
+                        <p>It seems the resume PDF could not be found or accessed.</p>
                         <h4>🔧 How to add your Resume:</h4>
                         <ol>
-                            <li>Create an <code>assets/</code> folder in your repository</li>
-                            <li>Upload your Resume as <code>Meet2197_Resume.pdf</code></li>
+                            <li>Create an <code>assets/</code> folder in your repository root.</li>
+                            <li>Upload your Resume as <code>Meet2197_Resume.pdf</code> into the <code>assets/</code> folder.</li>
                             <li>The file structure should be:
                                 <pre>
 Meet2197.github.io/
@@ -501,13 +530,13 @@ Meet2197.github.io/
 └── script.js
                                 </pre>
                             </li>
-                            <li>Commit and push to GitHub</li>
+                            <li><strong>Important:</strong> Test this by running a local web server (e.g., using VS Code's Live Server extension, or Python's <code>python -m http.server</code> in your project root) or by deploying to GitHub Pages. Directly opening <code>index.html</code> from your file system (<code>file://</code> protocol) often causes security restrictions for loading local files like PDFs.</li>
                         </ol>
                         
                         <h4>🎯 Alternative: Direct Link</h4>
                         <p>You can also link to your Resume hosted elsewhere:</p>
                         <ul>
-                            <li>Google Drive (with public sharing)</li>
+                            <li>Google Drive (with public sharing enabled)</li>
                             <li>Dropbox public link</li>
                             <li>Your personal website</li>
                         </ul>
@@ -529,32 +558,32 @@ Meet2197.github.io/
         });
     }
 
-    // --- Help function (Updated) ---
+    // --- Help function (Updated to produce HTML) ---
     function showHelp() {
-        const helpText = `
-╔════════════════════════════════════════════════════════════════╗
-║                   AVAILABLE COMMANDS                           ║
-╠════════════════════════════════════════════════════════════════╣
-║ Navigation Commands:                                           ║
-║ • about         - Show about information                       ║
-║ • skills        - Display technical skills                     ║
-║ • projects      - Show project portfolio                       ║
-║ • contact       - Show contact information                     ║
-║ • resume        - Display Resume/Experience                    ║
-║ • github        - Open GitHub profile                          ║
-║                                                                ║
-║ Resume Commands:                                               ║
-║ • download-resume - Download PDF version of resume             ║
-║ • preview-resume  - Preview resume in a modal                  ║
-║                                                                ║
-║ Utility Commands:                                              ║
-║ • clear / cls   - Clear terminal                               ║
-║ • help          - Show this help message                       ║
-║                                                                ║
-║ You can also use the navigation buttons above!                 ║
-╚════════════════════════════════════════════════════════════════╝
+        return `
+            <h3>Available Commands:</h3>
+            <h4>Navigation Commands:</h4>
+            <ul>
+                <li><span class="command">about</span> - Learn more about me.</li>
+                <li><span class="command">skills</span> - Display my technical skills.</li>
+                <li><span class="command">projects</span> - See my portfolio projects.</li>
+                <li><span class="command">contact</span> - Find my contact information.</li>
+                <li><span class="command">resume</span> - Display Resume/Experience.</li>
+                <li><span class="command">github</span> - See my GitHub profile and repositories.</li>
+            </ul>
+            <h4>Resume-specific Commands:</h4>
+            <ul>
+                <li><span class="command">download-resume</span> - Download PDF version of my resume.</li>
+                <li><span class="command">preview-resume</span> - Preview my resume in a modal window.</li>
+            </ul>
+            <h4>Utility Commands:</h4>
+            <ul>
+                <li><span class="command">clear</span> / <span class="command">cls</span> - Clear the terminal screen.</li>
+                <li><span class="command">help</span> - Display this help message.</li>
+            </ul>
+            <p>You can also use the navigation buttons on the right side!</p>
         `;
-        return helpText; // Return the text to be displayed by displayOutput
+
     }
 
     // Utility function to place caret at the end of contenteditable div
@@ -578,7 +607,7 @@ Meet2197.github.io/
     // Enhanced console easter egg (updated to reflect resume)
     console.log(`
     ╔══════════════════════════════════════════════════════════════╗
-    ║               Welcome to Meet Bhatt's  Portfolio             ║
+    ║               Welcome to Meet Bhatt's Terminal Portfolio     ║
     ║                                                              ║
     ║  👋 Hello! I'm Meet Bhatt - Data Steward                     ║
     ║  🔬 Specializing in Data science centric technology          ║
@@ -588,7 +617,6 @@ Meet2197.github.io/
     ║     Ctrl+4: Contact  Ctrl+5: Resume    Ctrl+6: GitHub        ║
     ║     Esc: Hide content                                        ║
     ║                                                              ║
-    ║  🚀 Thanks for exploring my portfolio!                       ║
     ║  📧 Feel free to reach out: meet.bhatt@etu.unice.fr          ║
     ╚══════════════════════════════════════════════════════════════╝
 `);
