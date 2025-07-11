@@ -1,5 +1,9 @@
 # 🌐 Meet Bhatt's Portfolio
 
+https://meet2197.github.io/
+
+![alt text](<Screenshot from 2025-07-11 13-51-45.png>)
+
 Welcome to my professional portfolio!
 
 - 🧬 **Bioinformatics & Computational Biology**
@@ -73,6 +77,13 @@ A backend service built in Java for robust API management and data routing.
 
 Clone this portfolio to explore or customize your own:
 
-```bash
+```
 git clone https://github.com/Meet2197/Meet2197.github.io.git
 cd Meet2197.github.io
+```
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
+
+## 📦 Releases
+Check the [Releases](https://github.com/Meet2197/Meet2197.github.io/releases) page for version history.
