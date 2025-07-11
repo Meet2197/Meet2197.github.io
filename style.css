@@ -487,6 +487,15 @@ body {
     gap: 10px;
 }
 
+#userInput {
+  flex-grow: 1;
+  outline: none; /* REMOVE THE WHITE OUTLINE */
+  border: none; /* Ensure no border */
+  background: transparent; /* Ensure no background */
+  color: #ffffff; /* Keep your text color */
+  caret-color: #00ff00; /* Cursor color */
+  min-width: 50px;
+}
 
 /* Loading Animation */
 .loading {
