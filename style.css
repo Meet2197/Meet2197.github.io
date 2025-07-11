@@ -13,15 +13,16 @@ body {
   min-height: 100vh;
 }
 
-/* Terminal Container - Centers Everything */
+/* Terminal Container - Centers Everything and holds terminal + sidebar */
 .terminal-container {
-  display: flex;
+  display: flex; /* Make it a flex container */
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align items to the top (or center if you prefer for overall look) */
   min-height: 100vh;
   width: 100%;
   padding: 20px;
   position: relative;
+  gap: 30px; /* Space between terminal and button sidebar */
 }
 
 /* Background Animation */
@@ -58,6 +59,7 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  flex-shrink: 0; /* Prevent terminal from shrinking too much */
 }
 
 /* Terminal Header */
@@ -115,7 +117,7 @@ body {
   color: #00ff00;
   font-size: 14px;
   line-height: 1.6;
-  min-height: 500px;
+  min-height: 500px; /* Ensures a consistent height even with little content */
   position: relative;
 }
 
@@ -201,12 +203,20 @@ body {
   gap: 5px;
 }
 
-/* Button Grid */
+/* Button Sidebar - NEW */
+.button-sidebar {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left within the sidebar */
+    padding: 20px 0; /* Add some padding if needed */
+}
+
+/* Button Grid - Modified for vertical stacking */
 .button-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusted for more flexible layout */
-  gap: 12px;
-  margin-top: 25px;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 12px; /* Space between buttons */
+    /* No margin-top here anymore, controlled by button-sidebar position */
 }
 
 .terminal-nav-button {
@@ -227,6 +237,7 @@ body {
   align-items: center; /* Added for download/preview buttons in resume section */
   justify-content: center; /* Added for download/preview buttons in resume section */
   gap: 8px; /* Added for icon spacing in download/preview buttons */
+  min-width: 120px; /* Give buttons a consistent minimum width */
 }
 
 .terminal-nav-button::before {
@@ -491,7 +502,10 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .terminal-container {
+      flex-direction: column; /* Stack terminal and buttons vertically */
+      align-items: center; /* Center them horizontally */
       padding: 10px;
+      gap: 20px; /* Adjust gap for vertical stacking */
   }
 
   .terminal {
@@ -504,14 +518,24 @@ body {
       font-size: 13px;
   }
 
+  .button-sidebar {
+      width: 100%; /* Take full width on smaller screens */
+      padding: 0; /* Remove horizontal padding */
+      align-items: center; /* Center the grid of buttons */
+  }
+
   .button-grid {
-      grid-template-columns: 1fr;
-      gap: 10px;
+      flex-direction: row; /* Allow buttons to wrap horizontally */
+      flex-wrap: wrap;
+      justify-content: center; /* Center buttons within the row */
+      width: 100%; /* Take full width to allow wrapping */
   }
 
   .terminal-nav-button {
       padding: 12px 15px;
       font-size: 13px;
+      flex-grow: 1; /* Allow buttons to grow and fill space */
+      min-width: unset; /* Remove min-width so they can shrink */
   }
 
   .welcome-title {
