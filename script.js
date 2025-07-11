@@ -1,519 +1,589 @@
-// Portfolio Data - Updated with Meet2197's actual repositories and details
-const portfolioData = {
-    about: {
-        title: "About Me",
-        content: `
-            <h3>$ cat about.txt</h3>
-            <p>Hello! I'm Meet Bhatt, a Data Steward</p>
-            <p>Based in Dresden, Germany, I specialize in:</p>
-            <ul>
-                <li>🔬 Laboratory Information Management Systems (LIMS)</li>
-                <li>📊 Data analysis and visualization</li>
-                <li>🧬 Bioinformatic data experinced</li>
-                <li>🔧 API development and integration</li>
-                <li>📈 Scientific data management and workflows</li>
-            </ul>
-            <p>I bridge the gap between scientific research and technology, creating efficient solutions for complex data challenges.</p>
-        `
-    },
-    skills: {
-        title: "Technical Skills",
-        content: `
-            <h3>$ ls -la skills/</h3>
-            <p><strong>Programming Languages:</strong></p>
-            <ul>
-                <li>JavaScript (ES6+) - Full-stack development</li>
-                <li>Python - Data analysis & bioinformatics</li>
-                <li>Java - Enterprise applications</li>
-                <li>R - Statistical analysis & visualization</li>
-                <li>HTML5 & CSS3 - Modern web interfaces</li>
-            </ul>
-            <p><strong>Frameworks & Libraries:</strong></p>
-            <ul>
-                <li>React.js - Interactive UIs</li>
-                <li>Node.js - Server-side applications</li>
-                <li>Vue.js - Progressive web apps</li>
-                <li>Chart.js - Data visualization</li>
-                <li>Firebase - Real-time databases</li>
-            </ul>
-            <p><strong>Scientific & Data Tools:</strong></p>
-            <ul>
-                <li>LIMS Systems - Laboratory data management</li>
-                <li>MongoDB - NoSQL databases</li>
-                <li>APIs - RESTful services</li>
-                <li>Git & GitHub - Version control</li>
-                <li>JSON Processing - Data interchange</li>
-            </ul>
-        `
-    },
-    projects: {
-        title: "Featured Projects",
-        content: `
-            <h3>$ find projects/ -type f -name "*.md"</h3>
-            <div class="projects-section">
-                <div class="project-divider">───────────────────────────────────────────────────────────────</div>
-                
-                <div class="project-item">
-                    <h4>1. Terminal Portfolio 💻</h4>
-                    <ul>
-                        <li>Interactive terminal-style portfolio website</li>
-                        <li>Command-line interface with clickable buttons</li>
-                        <li>Technologies: HTML, CSS, JavaScript, GitHub Actions</li>
-                        <li><a href="https://github.com/Meet2197/Meet2197.github.io" target="_blank">→ View Repository</a></li>
-                    </ul>
+document.addEventListener('DOMContentLoaded', () => {
+    const terminalContent = document.getElementById('terminalContent');
+    const userInput = document.getElementById('userInput');
+    const outputDiv = document.getElementById('output'); // This will now be primarily for command output
+    const contentDisplay = document.getElementById('content-display'); // The container for outputDiv
+
+    let history = [];
+    let historyIndex = -1;
+
+    // Portfolio Data - Updated with Meet2197's actual repositories and details
+    const portfolioData = {
+        about: {
+            title: "About Me",
+            content: `
+                <h3>$ cat about.txt</h3>
+                <p>Hello! I'm Meet Bhatt, a Data Steward</p>
+                <p>Based in Dresden, Germany, I specialize in:</p>
+                <ul>
+                    <li>🔬 Laboratory Information Management Systems (LIMS)</li>
+                    <li>📊 Data analysis and visualization</li>
+                    <li>🧬 Bioinformatic data experinced</li>
+                    <li>🔧 API development and integration</li>
+                    <li>📈 Scientific data management and workflows</li>
+                </ul>
+                <p>I bridge the gap between scientific research and technology, creating efficient solutions for complex data challenges.</p>
+            `
+        },
+        skills: {
+            title: "Technical Skills",
+            content: `
+                <h3>$ ls -la skills/</h3>
+                <p><strong>Programming Languages:</strong></p>
+                <ul>
+                    <li>JavaScript (ES6+) - Full-stack development</li>
+                    <li>Python - Data analysis & bioinformatics</li>
+                    <li>Java - Enterprise applications</li>
+                    <li>R - Statistical analysis & visualization</li>
+                    <li>HTML5 & CSS3 - Modern web interfaces</li>
+                </ul>
+                <p><strong>Frameworks & Libraries:</strong></p>
+                <ul>
+                    <li>React.js - Interactive UIs</li>
+                    <li>Node.js - Server-side applications</li>
+                    <li>Vue.js - Progressive web apps</li>
+                    <li>Chart.js - Data visualization</li>
+                    <li>Firebase - Real-time databases</li>
+                </ul>
+                <p><strong>Scientific & Data Tools:</strong></p>
+                <ul>
+                    <li>LIMS Systems - Laboratory data management</li>
+                    <li>MongoDB - NoSQL databases</li>
+                    <li>APIs - RESTful services</li>
+                    <li>Git & GitHub - Version control</li>
+                    <li>JSON Processing - Data interchange</li>
+                </ul>
+            `
+        },
+        projects: {
+            title: "Featured Projects",
+            content: `
+                <h3>$ find projects/ -type f -name "*.md"</h3>
+                <div class="projects-section">
+                    <div class="project-divider">───────────────────────────────────────────────────────────────</div>
+
+                    <div class="project-item">
+                        <h4>1. Terminal Portfolio 💻</h4>
+                        <ul>
+                            <li>Interactive terminal-style portfolio website</li>
+                            <li>Command-line interface with clickable buttons</li>
+                            <li>Technologies: HTML, CSS, JavaScript, GitHub Actions</li>
+                            <li><a href="https://github.com/Meet2197/Meet2197.github.io" target="_blank">→ View Repository</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>2. LIMS System 🛒</h4>
+                        <ul>
+                            <li>Laboratory Information Management System</li>
+                            <li>Streamlines laboratory operations & improves data accuracy</li>
+                            <li>Technologies: JavaScript, MIT License</li>
+                            <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">→ View Repository</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>3. JSON Viewer 📋</h4>
+                        <ul>
+                            <li>Tool for observing and analyzing JSON files</li>
+                            <li>Clean interface for data visualization</li>
+                            <li>Technologies: JavaScript, MIT License</li>
+                            <li><a href="https://github.com/Meet2197/JSON-viewer" target="_blank">→ View Repository</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>4. DRE API 🌤️</h4>
+                        <ul>
+                            <li>Java-based API development project</li>
+                            <li>Backend services and data processing</li>
+                            <li>Technologies: Java, Apache License 2.0</li>
+                            <li><a href="https://github.com/Meet2197/DRE-Api" target="_blank">→ View Repository</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>5. Psychological Data Analysis 🧠</h4>
+                        <ul>
+                            <li>Advanced statistical analysis of psychological datasets</li>
+                            <li>Data processing and visualization tools</li>
+                            <li>Technologies: Python, Scientific Computing</li>
+                            <li><a href="https://github.com/Meet2197/Psychological-data-analysis" target="_blank">→ View Repository</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>6. Metabolites Visualisation 🔬</h4>
+                        <ul>
+                            <li>Bioinformatics tool for metabolite data visualization</li>
+                            <li>Scientific data analysis and reporting</li>
+                            <li>Technologies: R, Statistical Analysis</li>
+                            <li><a href="https://github.com/Meet2197/Metabolites-Visualisation" target="_blank">→ View Repository</a></li>
+                        </ul>
+                    </div>
                 </div>
+            `
+        },
+        contact: {
+            title: "Contact Information",
+            content: `
+                <h3>$ cat contact.txt</h3>
+                <p>📍 <strong>Location:</strong> Dresden, Germany</p>
+                <p>🏢 <strong>Position:</strong> Data Steward, Physics of Life, TU Dresden</p>
+                <p>Let's connect! You can reach me through:</p>
+                <ul>
+                    <li>📧 Email: <a href="mailto:meet.bhatt@etu.unice.fr">meet.bhatt@etu.unice.fr</a></li>
+                    <li>🔗 LinkedIn: <a href="https://linkedin.com/in/meet2197" target="_blank">linkedin.com/in/meet2197</a></li>
+                    <li>🐙 GitHub: <a href="https://github.com/Meet2197" target="_blank">github.com/Meet2197</a></li>
+                </ul>
+                <p>I'm always interested in discussing:</p>
+                <ul>
+                    <li>🔬 Scientific data management projects</li>
+                    <li>💻 Full-stack development opportunities</li>
+                    <li>🧬 Bioinformatics collaborations</li>
+                    <li>📊 Data analysis challenges</li>
+                </ul>
+            `
+        },
+        resume: {
+            title: "Resume & Experience",
+            content: `
+                <h3>$ cat resume.pdf</h3>
+                <p><strong>Current Position:</strong></p>
+                <ul>
+                    <li>🏢 Data Steward at DFG cluster of excellence</li>
+                    <li>🎯 Physics of Life, TU Dresden</li>
+                    <li>📍 Dresden, Germany</li>
+                </ul>
 
-                <div class="project-item">
-                    <h4>2. LIMS System 🛒</h4>
-                    <ul>
-                        <li>Laboratory Information Management System</li>
-                        <li>Streamlines laboratory operations & improves data accuracy</li>
-                        <li>Technologies: JavaScript, MIT License</li>
-                        <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">→ View Repository</a></li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <h4>3. JSON Viewer 📋</h4>
-                    <ul>
-                        <li>Tool for observing and analyzing JSON files</li>
-                        <li>Clean interface for data visualization</li>
-                        <li>Technologies: JavaScript, MIT License</li>
-                        <li><a href="https://github.com/Meet2197/JSON-viewer" target="_blank">→ View Repository</a></li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <h4>4. DRE API 🌤️</h4>
-                    <ul>
-                        <li>Java-based API development project</li>
-                        <li>Backend services and data processing</li>
-                        <li>Technologies: Java, Apache License 2.0</li>
-                        <li><a href="https://github.com/Meet2197/DRE-Api" target="_blank">→ View Repository</a></li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <h4>5. Psychological Data Analysis 🧠</h4>
-                    <ul>
-                        <li>Advanced statistical analysis of psychological datasets</li>
-                        <li>Data processing and visualization tools</li>
-                        <li>Technologies: Python, Scientific Computing</li>
-                        <li><a href="https://github.com/Meet2197/Psychological-data-analysis" target="_blank">→ View Repository</a></li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <h4>6. Metabolites Visualisation 🔬</h4>
-                    <ul>
-                        <li>Bioinformatics tool for metabolite data visualization</li>
-                        <li>Scientific data analysis and reporting</li>
-                        <li>Technologies: R, Statistical Analysis</li>
-                        <li><a href="https://github.com/Meet2197/Metabolites-Visualisation" target="_blank">→ View Repository</a></li>
-                    </ul>
-                </div>
-            </div>
-        `
-    },
-    contact: {
-        title: "Contact Information",
-        content: `
-            <h3>$ cat contact.txt</h3>
-            <p>📍 <strong>Location:</strong> Dresden, Germany</p>
-            <p>🏢 <strong>Position:</strong> Data Steward at DFG cluster of excellence, Physics of Life, TU Dresden</p>
-            <p>Let's connect! You can reach me through:</p>
-            <ul>
-                <li>📧 Email: <a href="mailto:meet@physicsoflife.tu-dresden.de">meet@physicsoflife.tu-dresden.de</a></li>
-                <li>🔗 LinkedIn: <a href="https://linkedin.com/in/meet2197" target="_blank">linkedin.com/in/meet2197</a></li>
-                <li>🐙 GitHub: <a href="https://github.com/Meet2197" target="_blank">github.com/Meet2197</a></li>
-                <li>🐦 Twitter: <a href="https://twitter.com/meet2197" target="_blank">@meet2197</a></li>
-            </ul>
-            <p>I'm always interested in discussing:</p>
-            <ul>
-                <li>🔬 Scientific data management projects</li>
-                <li>💻 Full-stack development opportunities</li>
-                <li>🧬 Bioinformatics collaborations</li>
-                <li>📊 Data analysis challenges</li>
-            </ul>
-        `
-    },
-    resume: {
-        title: "Resume & Experience",
-        content: `
-            <h3>$ cat resume.pdf</h3>
-            <p><strong>Current Position:</strong></p>
-            <ul>
-                <li>🏢 Data Steward at DFG cluster of excellence</li>
-                <li>🎯 Physics of Life, TU Dresden</li>
-                <li>📍 Dresden, Germany</li>
-            </ul>
-            
-            <div class="cv-download-section">
-                <h4>📄 Download Resume:</h4>
-                <div class="cv-buttons">
-                    <button class="cv-download-btn" onclick="downloadCV()">
-                        <span class="cv-icon">📥</span>
-                        Download PDF CV
-                    </button>
-                    <button class="cv-preview-btn" onclick="previewCV()">
-                        <span class="cv-icon">👁️</span>
-                        Preview CV
-                    </button>
-                </div>
-            </div>
-            
-            <p><strong>Experience Highlights:</strong></p>
-            <ul>
-                <li>🔬 Laboratory Information Management Systems (LIMS)</li>
-                <li>📊 Scientific data analysis and visualization</li>
-                <li>🧬 Bioinformatics data analysis</li>
-                <li>🔧 API development and system integration</li>
-                <li>📈 Research data management workflows</li>
-            </ul>
-            
-            <p><strong>Technologies & Tools:</strong></p>
-            <ul>
-                <li>Languages: JavaScript, Python, Java, R, HTML/CSS</li>
-                <li>Frameworks: React.js, Node.js, Vue.js</li>
-                <li>Databases: Postgres</li>
-                <li>Tools: Git, GitHub, Gitlab</li>
-            </ul>
-            
-            <p><strong>Education:</strong></p>
-            <ul>
-                <li>🎓 Master's Degree (Research documented in GitHub)</li>
-                <li>📚 Specialized in Physics of Life research</li>
-                <li>🔬 Focus on data science</li>
-            </ul>
-        `
-    },
-    github: {
-        title: "GitHub Profile & Repositories",
-        content: `
-            <h3>$ git log --oneline --all</h3>
-            <p>🐙 <strong>GitHub Profile:</strong> <a href="https://github.com/Meet2197" target="_blank">github.com/Meet2197</a></p>
-            <p>📊 <strong>Activity:</strong> Active contributor with regular commits</p>
-            
-            <p><strong>🌟 Featured Repositories:</strong></p>
-            <ul>
-                <li><a href="https://github.com/Meet2197/Meet2197.github.io" target="_blank">📱 Terminal Portfolio</a> - Interactive portfolio website</li>
-                <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">🔬 LIMS System</a> - Laboratory Information Management</li>
-                <li><a href="https://github.com/Meet2197/JSON-viewer" target="_blank">📋 JSON Viewer</a> - Data visualization tool</li>
-                <li><a href="https://github.com/Meet2197/DRE-Api" target="_blank">⚡ DRE API</a> - Java-based API services</li>
-                <li><a href="https://github.com/Meet2197/Psychological-data-analysis" target="_blank">🧠 Psychological Data Analysis</a> - Python analytics</li>
-                <li><a href="https://github.com/Meet2197/Metabolites-Visualisation" target="_blank">🔬 Metabolites Visualisation</a> - R-based bioinformatics</li>
-                <li><a href="https://github.com/Meet2197/Master-arbeit" target="_blank">🎓 Master's Thesis</a> - Academic research project</li>
-            </ul>
-            
-            <p><strong>🔧 Technologies Used:</strong></p>
-            <ul>
-                <li>JavaScript - Web development & APIs</li>
-                <li>Python - Data analysis & bioinformatics</li>
-                <li>Java - Enterprise applications</li>
-                <li>R - Statistical analysis</li>
-                <li>HTML/CSS - Frontend development</li>
-            </ul>
-            
-            <p><strong>📈 Recent Activity:</strong></p>
-            <ul>
-                <li>🔄 Latest update: Jul 10, 2025 (Terminal Portfolio)</li>
-                <li>🛠️ LIMS System updated: Jul 9, 2025</li>
-                <li>📊 JSON Viewer updated: Jul 8, 2025</li>
-                <li>⚡ Active development across multiple projects</li>
-            </ul>
-        `
-    }
-};
-
-// Enhanced show section function with animations
-function showSection(section) {
-    const contentDisplay = document.getElementById('content-display');
-    const currentCommand = document.getElementById('current-command');
-    const contentOutput = document.getElementById('content-output');
-    
-    if (portfolioData[section]) {
-        // Add loading animation
-        contentDisplay.classList.add('loading');
-        
-        setTimeout(() => {
-            currentCommand.textContent = section;
-            contentOutput.innerHTML = portfolioData[section].content;
-            contentDisplay.classList.remove('hidden', 'loading');
-            
-            // Add typing effect for project items
-            const projectItems = contentOutput.querySelectorAll('.project-item');
-            projectItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    item.style.transition = 'all 0.5s ease';
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-            
-            // Smooth scroll to content
-            setTimeout(() => {
-                contentDisplay.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
-            }, 100);
-        }, 500);
-    }
-}
-
-// CV Download and Preview Functions
-function downloadCV() {
-    // Create a loading animation
-    const button = event.target.closest('.cv-download-btn');
-    const originalContent = button.innerHTML;
-    button.innerHTML = '<span class="cv-icon">⏳</span> Preparing Download...';
-    button.disabled = true;
-    
-    // Simulate download preparation
-    setTimeout(() => {
-        // Reset button
-        button.innerHTML = originalContent;
-        button.disabled = false;
-        
-        // Check if CV file exists, if not, show instructions
-        if (!document.getElementById('cv-file-input')) {
-            showCVUploadInstructions();
-        } else {
-            // Trigger download
-            const link = document.createElement('a');
-            link.href = 'assets/Meet2197_CV.pdf'; // Update this path to your CV
-            link.download = 'Meet2197_CV.pdf';
-            link.click();
-        }
-    }, 1500);
-}
-
-function previewCV() {
-    // Create modal for CV preview
-    const modal = document.createElement('div');
-    modal.className = 'cv-modal';
-    modal.innerHTML = `
-        <div class="cv-modal-content">
-            <div class="cv-modal-header">
-                <h3>📄 CV Preview</h3>
-                <button class="cv-modal-close" onclick="closeCVModal()">&times;</button>
-            </div>
-            <div class="cv-modal-body">
-                <iframe src="assets/Meet2197_CV.pdf" width="100%" height="600px" frameborder="0">
-                    <p>Your browser does not support PDFs. 
-                    <a href="assets/Meet2197_CV.pdf" target="_blank">Download the PDF</a>.</p>
-                </iframe>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    
-    // Add event listener for clicking outside modal
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeCVModal();
-        }
-    });
-}
-
-function closeCVModal() {
-    const modal = document.querySelector('.cv-modal');
-    if (modal) {
-        modal.remove();
-    }
-}
-
-function showCVUploadInstructions() {
-    const modal = document.createElement('div');
-    modal.className = 'cv-modal';
-    modal.innerHTML = `
-        <div class="cv-modal-content">
-            <div class="cv-modal-header">
-                <h3>📋 CV Setup Instructions</h3>
-                <button class="cv-modal-close" onclick="closeCVModal()">&times;</button>
-            </div>
-            <div class="cv-modal-body">
-                <div class="cv-instructions">
-                    <h4>🔧 How to add your CV:</h4>
-                    <ol>
-                        <li>Create an <code>assets/</code> folder in your repository</li>
-                        <li>Upload your CV as <code>Meet2197_CV.pdf</code></li>
-                        <li>The file structure should be:
-                            <pre>
-Meet2197.github.io/
-├── assets/
-│   └── Meet2197_CV.pdf
-├── index.html
-├── style.css
-└── script.js
-                            </pre>
-                        </li>
-                        <li>Commit and push to GitHub</li>
-                    </ol>
-                    
-                    <h4>🎯 Alternative: Direct Link</h4>
-                    <p>You can also link to your CV hosted elsewhere:</p>
-                    <ul>
-                        <li>Google Drive (with public sharing)</li>
-                        <li>Dropbox public link</li>
-                        <li>Your personal website</li>
-                    </ul>
-                    
-                    <div class="cv-temp-buttons">
-                        <button class="cv-download-btn" onclick="window.open('https://drive.google.com/file/d/YOUR_DRIVE_ID/view', '_blank')">
-                            <span class="cv-icon">🔗</span>
-                            Example: Google Drive Link
+                <div class="resume-download-section">
+                    <h4>📄 Download Resume:</h4>
+                    <div class="resume-buttons">
+                        <button class="terminal-nav-button download-btn" onclick="downloadResume()">
+                            <span class="button-text">📥 Download PDF</span>
+                        </button>
+                        <button class="terminal-nav-button preview-btn" onclick="previewResume()">
+                            <span class="button-text">👁️ Preview</span>
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-}
 
-// Terminal command simulation
-function simulateTyping(element, text, speed = 50) {
-    element.textContent = '';
-    let i = 0;
-    const typing = setInterval(() => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-        } else {
-            clearInterval(typing);
+                <p><strong>Experience Highlights:</strong></p>
+                <ul>
+                    <li>🔬 Laboratory Information Management Systems (LIMS)</li>
+                    <li>📊 Scientific data analysis and visualization</li>
+                    <li>🧬 Bioinformatics data analysis</li>
+                    <li>🔧 API development and system integration</li>
+                    <li>📈 Research data management workflows</li>
+                </ul>
+
+                <p><strong>Technologies & Tools:</strong></p>
+                <ul>
+                    <li>Languages: JavaScript, Python, Java, R, HTML/CSS</li>
+                    <li>Frameworks: React.js, Node.js, Vue.js</li>
+                    <li>Databases: Postgres</li>
+                    <li>Tools: Git, GitHub, Gitlab</li>
+                </ul>
+
+                <p><strong>Education:</strong></p>
+                <ul>
+                    <li>🎓 Master's Degree (Research documented in GitHub)</li>
+                    <li>📚 Specialized in Physics of Life research</li>
+                    <li>🔬 Focus on data science</li>
+                </ul>
+            `
+        },
+        github: {
+            title: "GitHub Profile & Repositories",
+            content: `
+                <h3>$ git log --oneline --all</h3>
+                <p>🐙 <strong>GitHub Profile:</strong> <a href="https://github.com/Meet2197" target="_blank">github.com/Meet2197</a></p>
+                <p>📊 <strong>Activity:</strong> Active contributor with regular commits</p>
+
+                <p><strong>🌟 Featured Repositories:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/Meet2197/Meet2197.github.io" target="_blank">📱 Terminal Portfolio</a> - Interactive portfolio website</li>
+                    <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">🔬 LIMS System</a> - Laboratory Information Management</li>
+                    <li><a href="https://github.com/Meet2197/JSON-viewer" target="_blank">📋 JSON Viewer</a> - Data visualization tool</li>
+                    <li><a href="https://github.com/Meet2197/DRE-Api" target="_blank">⚡ DRE API</a> - Java-based API services</li>
+                    <li><a href="https://github.com/Meet2197/Psychological-data-analysis" target="_blank">🧠 Psychological Data Analysis</a> - Python analytics</li>
+                    <li><a href="https://github.com/Meet2197/Metabolites-Visualisation" target="_blank">🔬 Metabolites Visualisation</a> - R-based bioinformatics</li>
+                    <li><a href="https://github.com/Meet2197/Master-arbeit" target="_blank">🎓 Master's Thesis</a> - Academic research project</li>
+                </ul>
+
+                <p><strong>🔧 Technologies Used:</strong></p>
+                <ul>
+                    <li>JavaScript - Web development & APIs</li>
+                    <li>Python - Data analysis & bioinformatics</li>
+                    <li>Java - Enterprise applications</li>
+                    <li>R - Statistical analysis</li>
+                    <li>HTML/CSS - Frontend development</li>
+                </ul>
+
+                <p><strong>📈 Recent Activity:</strong></p>
+                <ul>
+                    <li>🔄 Latest update: ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} (Terminal Portfolio)</li>
+                    <li>🛠️ LIMS System updated: ${new Date(new Date().setDate(new Date().getDate() - 1)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</li>
+                    <li>📊 JSON Viewer updated: ${new Date(new Date().setDate(new Date().getDate() - 2)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</li>
+                    <li>⚡ Active development across multiple projects</li>
+                </ul>
+            `
         }
-    }, speed);
-}
+    };
 
-// Enhanced interactive features
-document.addEventListener('DOMContentLoaded', function() {
-    // Add typing effect to welcome message
-    const welcomeTitle = document.querySelector('.welcome-title');
-    if (welcomeTitle) {
-        const originalText = welcomeTitle.textContent;
-        simulateTyping(welcomeTitle, originalText, 100);
-    }
-    
-    // Enhanced button interactions
-    const buttons = document.querySelectorAll('.terminal-nav-button');
-    
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.02)';
-            this.style.boxShadow = '0 8px 25px rgba(0, 255, 0, 0.3)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '';
-        });
-        
-        button.addEventListener('click', function() {
-            // Add click animation
-            this.style.transform = 'translateY(0) scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = 'translateY(-2px) scale(1.02)';
-            }, 150);
-        });
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        switch(e.key) {
-            case 'Escape':
-                document.getElementById('content-display').classList.add('hidden');
-                closeCVModal(); // Close CV modal if open
-                break;
-            case '1':
-                if (e.ctrlKey) showSection('about');
-                break;
-            case '2':
-                if (e.ctrlKey) showSection('skills');
-                break;
-            case '3':
-                if (e.ctrlKey) showSection('projects');
-                break;
-            case '4':
-                if (e.ctrlKey) showSection('contact');
-                break;
-            case '5':
-                if (e.ctrlKey) showSection('resume');
-                break;
-            case '6':
-                if (e.ctrlKey) showSection('github');
-                break;
-        }
-    });
-    
-    // Add terminal cursor blinking animation
-    const cursors = document.querySelectorAll('.cursor');
-    cursors.forEach(cursor => {
-        setInterval(() => {
-            cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-        }, 500);
-    });
-    
-    // Add matrix rain effect (optional)
-    createMatrixRain();
-});
+    // Focus on the input when the page loads
+    userInput.focus();
 
-// Matrix rain effect function
-function createMatrixRain() {
-    const canvas = document.createElement('canvas');
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '-1';
-    canvas.style.opacity = '0.1';
-    document.body.appendChild(canvas);
-    
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-    const charArray = chars.split('');
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    
-    const drops = [];
-    for (let x = 0; x < columns; x++) {
-        drops[x] = 1;
-    }
-    
-    function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.fillStyle = '#00ff00';
-        ctx.font = fontSize + 'px monospace';
-        
-        for (let i = 0; i < drops.length; i++) {
-            const text = charArray[Math.floor(Math.random() * charArray.length)];
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-            
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
+    // Auto-focus on userInput when clicking anywhere in the terminal content
+    terminalContent.addEventListener('click', () => {
+        userInput.focus();
+    });
+
+    // Handle keyboard input for commands and history navigation
+    userInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent default Enter key behavior (e.g., new line)
+            const command = userInput.textContent.trim();
+            handleCommand(command);
+            userInput.textContent = ''; // Clear the input field
+            if (command !== '') { // Only add non-empty commands to history
+                history.unshift(command); // Add command to history
             }
-            drops[i]++;
+            historyIndex = -1; // Reset history index
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (history.length > 0) {
+                if (historyIndex === -1) {
+                    historyIndex = 0;
+                } else if (historyIndex < history.length - 1) {
+                    historyIndex++;
+                }
+                userInput.textContent = history[historyIndex];
+                placeCaretAtEnd(userInput);
+            }
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIndex > 0) {
+                historyIndex--;
+                userInput.textContent = history[historyIndex];
+                placeCaretAtEnd(userInput);
+            } else {
+                historyIndex = -1;
+                userInput.textContent = '';
+            }
+        }
+    });
+
+    // Handle button clicks for navigation
+    document.querySelectorAll('.terminal-nav-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const command = button.dataset.command;
+            if (command) { // Ensure it's a command button
+                handleCommand(command);
+            }
+            userInput.textContent = ''; // Clear the input field after button click
+            userInput.focus(); // Re-focus after button click
+        });
+    });
+
+    // --- Command Handling ---
+    function handleCommand(command) {
+        const lowerCommand = command.toLowerCase();
+
+        // Append the command to the terminal content as if typed
+        appendCommandToTerminal(command);
+
+        // Simulate typing delay for processing
+        setTimeout(() => {
+            let outputHTML = ''; // This will store the HTML for displayOutput
+
+            switch (lowerCommand) {
+                case 'help':
+                    outputHTML = showHelp(); // Call showHelp to get the content
+                    displayOutput(outputHTML, true); // Display as rich HTML
+                    break;
+                case 'about':
+                case 'skills':
+                case 'projects':
+                case 'contact':
+                case 'resume': // Now only 'resume' command is recognized for this content
+                case 'github':
+                    showSection(lowerCommand);
+                    break;
+                case 'clear':
+                case 'cls':
+                    clearTerminal();
+                    break;
+                case 'download-resume': // New command for direct download
+                    downloadResume();
+                    break;
+                case 'preview-resume': // New command for direct preview
+                    previewResume();
+                    break;
+                default:
+                    // If not a recognized command, just echo the input
+                    outputHTML = `<span class="echo-output">${command}</span>`;
+                    displayOutput(outputHTML, false); // Display as plain text echo
+                    break;
+            }
+        }, 300); // Small delay to simulate processing
+    }
+
+    // --- Terminal UI Functions ---
+    function appendCommandToTerminal(command) {
+        const newPromptLine = document.createElement('div');
+        newPromptLine.classList.add('terminal-line');
+        newPromptLine.innerHTML = `<span class="prompt">user@portfolio:~$</span> <span class="command">${command}</span>`;
+        terminalContent.insertBefore(newPromptLine, document.querySelector('.terminal-prompt'));
+    }
+
+    // Enhanced show section function with animations
+    function showSection(section) {
+        const currentCommand = document.getElementById('current-command'); // Make sure this element exists in HTML
+        
+        if (portfolioData[section]) {
+            // Add loading animation
+            contentDisplay.classList.add('loading');
+            
+            setTimeout(() => {
+                currentCommand.textContent = section; // Update the title in the content area
+                outputDiv.innerHTML = portfolioData[section].content; // Use outputDiv for content
+                contentDisplay.classList.remove('hidden', 'loading');
+                
+                // Add typing effect for project items if applicable
+                if (section === 'projects') {
+                    const projectItems = outputDiv.querySelectorAll('.project-item');
+                    projectItems.forEach((item, index) => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.transition = 'all 0.5s ease';
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }
+                
+                // Smooth scroll to content
+                setTimeout(() => {
+                    contentDisplay.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
+            }, 500);
         }
     }
-    
-    setInterval(draw, 100);
-}
 
-// Enhanced console easter egg
-console.log(`
+
+    /**
+     * Displays content in the output area or appends as echo.
+     * @param {string} htmlContent The HTML string to display.
+     * @param {boolean} isRichContent If true, content is HTML for the dedicated output area. If false, content is treated as plain text echo to main terminal flow.
+     */
+    function displayOutput(htmlContent, isRichContent) {
+        if (isRichContent) {
+            outputDiv.innerHTML = htmlContent;
+            contentDisplay.classList.remove('hidden'); // Ensure the main outputDiv is visible
+        } else {
+            // For echoing, we'll append a new line to the main terminal content
+            // instead of overwriting outputDiv, to simulate a real terminal.
+            const echoLine = document.createElement('div');
+            echoLine.classList.add('terminal-line');
+            echoLine.innerHTML = htmlContent; // htmlContent already contains the span for styling
+            terminalContent.insertBefore(echoLine, document.querySelector('.terminal-prompt'));
+            contentDisplay.classList.add('hidden'); // Ensure the main outputDiv is hidden for echoes
+            outputDiv.innerHTML = ''; // Clear it
+        }
+
+        terminalContent.scrollTop = terminalContent.scrollHeight; // Scroll to bottom
+    }
+
+    function clearTerminal() {
+        // Select all terminal lines EXCEPT the current input prompt and the welcome box
+        const linesToRemove = terminalContent.querySelectorAll('.terminal-line:not(.terminal-prompt):not(.welcome-box)');
+        linesToRemove.forEach(line => line.remove());
+
+        // Hide and clear the main outputDiv
+        outputDiv.classList.add('hidden');
+        outputDiv.innerHTML = '';
+
+        // Ensure the welcome box is visible after clearing
+        const welcomeBox = document.querySelector('.welcome-box');
+        if (welcomeBox) {
+            welcomeBox.style.display = 'block'; // Or whatever its default display was
+            welcomeBox.classList.remove('hidden'); // Ensure it's not hidden
+        }
+        closeResumeModal(); // Close any open modal
+        terminalContent.scrollTop = terminalContent.scrollHeight; // Scroll to bottom
+    }
+
+    // --- Resume Download and Preview Functions (Renamed from CV) ---
+    function downloadResume() {
+        const button = event.target.closest('.download-btn');
+        const originalContent = button.innerHTML;
+        button.innerHTML = '<span class="button-text">⏳ Preparing...</span>';
+        button.disabled = true;
+        
+        setTimeout(() => {
+            button.innerHTML = originalContent;
+            button.disabled = false;
+            
+            const filePath = 'assets/Meet2197_Resume.pdf'; // Ensure your PDF is here
+            // Check if file exists (basic check, could be more robust)
+            fetch(filePath, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        const link = document.createElement('a');
+                        link.href = filePath;
+                        link.download = 'Meet2197_Resume.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    } else {
+                        showResumeUploadInstructions();
+                    }
+                })
+                .catch(() => showResumeUploadInstructions());
+        }, 1500);
+    }
+
+    function previewResume() {
+        const modal = document.createElement('div');
+        modal.className = 'resume-modal'; // Renamed class
+        modal.innerHTML = `
+            <div class="resume-modal-content">
+                <div class="resume-modal-header">
+                    <h3>📄 Resume Preview</h3>
+                    <button class="resume-modal-close" onclick="closeResumeModal()">&times;</button>
+                </div>
+                <div class="resume-modal-body">
+                    <iframe src="assets/Meet2197_Resume.pdf" width="100%" height="600px" frameborder="0">
+                        <p>Your browser does not support PDFs.
+                        <a href="assets/Meet2197_Resume.pdf" target="_blank">Download the PDF</a>.</p>
+                    </iframe>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeResumeModal();
+            }
+        });
+    }
+
+    function closeResumeModal() {
+        const modal = document.querySelector('.resume-modal'); // Renamed class
+        if (modal) {
+            modal.remove();
+        }
+    }
+
+    function showResumeUploadInstructions() {
+        const modal = document.createElement('div');
+        modal.className = 'resume-modal'; // Renamed class
+        modal.innerHTML = `
+            <div class="resume-modal-content">
+                <div class="resume-modal-header">
+                    <h3>📋 Resume Setup Instructions</h3>
+                    <button class="resume-modal-close" onclick="closeResumeModal()">&times;</button>
+                </div>
+                <div class="resume-modal-body">
+                    <div class="resume-instructions">
+                        <h4>🔧 How to add your Resume:</h4>
+                        <ol>
+                            <li>Create an <code>assets/</code> folder in your repository</li>
+                            <li>Upload your Resume as <code>Meet2197_Resume.pdf</code></li>
+                            <li>The file structure should be:
+                                <pre>
+Meet2197.github.io/
+├── assets/
+│   └── Meet2197_Resume.pdf
+├── index.html
+├── style.css
+└── script.js
+                                </pre>
+                            </li>
+                            <li>Commit and push to GitHub</li>
+                        </ol>
+                        
+                        <h4>🎯 Alternative: Direct Link</h4>
+                        <p>You can also link to your Resume hosted elsewhere:</p>
+                        <ul>
+                            <li>Google Drive (with public sharing)</li>
+                            <li>Dropbox public link</li>
+                            <li>Your personal website</li>
+                        </ul>
+                        
+                        <div class="resume-temp-buttons">
+                            <button class="terminal-nav-button" onclick="window.open('https://drive.google.com/file/d/YOUR_DRIVE_ID/view', '_blank')">
+                                <span class="button-text">🔗 Example: Google Drive Link</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeResumeModal();
+            }
+        });
+    }
+
+    // --- Help function (Updated) ---
+    function showHelp() {
+        const helpText = `
+╔════════════════════════════════════════════════════════════════╗
+║                   AVAILABLE COMMANDS                           ║
+╠════════════════════════════════════════════════════════════════╣
+║ Navigation Commands:                                           ║
+║ • about         - Show about information                       ║
+║ • skills        - Display technical skills                     ║
+║ • projects      - Show project portfolio                       ║
+║ • contact       - Show contact information                     ║
+║ • resume        - Display Resume/Experience                    ║
+║ • github        - Open GitHub profile                          ║
+║                                                                ║
+║ Resume Commands:                                               ║
+║ • download-resume - Download PDF version of resume             ║
+║ • preview-resume  - Preview resume in a modal                  ║
+║                                                                ║
+║ Utility Commands:                                              ║
+║ • clear / cls   - Clear terminal                               ║
+║ • help          - Show this help message                       ║
+║                                                                ║
+║ You can also use the navigation buttons above!                 ║
+╚════════════════════════════════════════════════════════════════╝
+        `;
+        return helpText; // Return the text to be displayed by displayOutput
+    }
+
+    // Utility function to place caret at the end of contenteditable div
+    function placeCaretAtEnd(el) {
+        el.focus();
+        if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } else if (typeof document.body.createTextRange != "undefined") {
+            const textRange = document.body.createTextRange();
+            textRange.moveToElementText(el);
+            textRange.collapse(false);
+            textRange.select();
+        }
+    }
+
+    // Enhanced console easter egg (updated to reflect resume)
+    console.log(`
     ╔══════════════════════════════════════════════════════════════╗
-    ║               Welcome to Meet Bhatt's Terminal Portfolio     ║
+    ║               Welcome to Meet Bhatt's  Portfolio             ║
     ║                                                              ║
     ║  👋 Hello! I'm Meet Bhatt - Data Steward                     ║
     ║  🔬 Specializing in Data science centric technology          ║
@@ -527,158 +597,4 @@ console.log(`
     ║  📧 Feel free to reach out: meet.bhatt@etu.unice.fr          ║
     ╚══════════════════════════════════════════════════════════════╝
 `);
-
-// Add some fun terminal commands
-const easterEggs = {
-    'ls': 'about.txt  skills.txt  projects.txt  contact.txt  resume.pdf',
-    'pwd': '/home/visitor/Meet_Bhatt-portfolio',
-    'whoami': 'visitor@Meet_Bhatt-terminal',
-    'date': new Date().toLocaleString(),
-    'uptime': 'System running since portfolio launch',
-    'ps': 'PID TTY TIME CMD\n1234 pts/0 00:00:01 terminal-portfolio',
-    'free': 'total: ∞ GB, used: 0.1 GB, free: ∞ GB (creativity has no limits)',
-    'df': 'Filesystem: /dev/creativity mounted on /portfolio (100% awesome)',
-    'cat /etc/motd': 'Welcome to Meet_Bhatt\'s Terminal Portfolio v2.0\nBuilt with ❤️ in Dresden, Germany'
-};
-
-// Add terminal command functionality (bonus feature)
-function handleTerminalCommand(command) {
-    const output = easterEggs[command.toLowerCase().trim()];
-    if (output) {
-        return `<div class="terminal-line"><span class="prompt">visitor@Meet_Bhatt:~$</span> ${command}</div>
-                <div class="terminal-line">${output}</div>`;
-    }
-    return `<div class="terminal-line"><span class="prompt">visitor@Meet_Bhatt:~$</span> ${command}</div>
-            <div class="terminal-line">Command not found. Type 'help' for available commands.</div>`; // Modified to suggest 'help'
-}
-
-// Clear Terminal Function
-function clearTerminal() {
-    // Clear the main content area
-    const outputArea = document.getElementById('content-output'); // Changed to content-output based on showSection usage
-    if (outputArea) {
-        outputArea.innerHTML = '';
-    }
-    
-    // Reset to welcome message
-    const welcomeMessage = `
-╔════════════════════════════════════════════════════════════════╗
-║                   Welcome to Meet2197's Portfolio              ║
-╠════════════════════════════════════════════════════════════════╣
-║ Data Steward at DFG cluster of excellence, Physics of Life,    ║
-║ TU Dresden                                                     ║
-║ Specializing in Laboratory Information Management Systems      ║
-║ & Bioinformatics                                               ║
-╚════════════════════════════════════════════════════════════════╝
-
-Use the navigation buttons or type 'help' to see available commands.
-    `;
-    
-    displayOutput(welcomeMessage);
-    
-    // Also hide the content display area
-    const contentDisplay = document.getElementById('content-display');
-    if (contentDisplay) {
-        contentDisplay.classList.add('hidden');
-    }
-}
-
-// Utility function to display output (modified to also update current-command)
-function displayOutput(content) {
-    const contentOutput = document.getElementById('content-output');
-    const currentCommand = document.getElementById('current-command');
-    const contentDisplay = document.getElementById('content-display');
-
-    if (contentOutput) {
-        contentOutput.innerHTML = `<pre>${content}</pre>`;
-        currentCommand.textContent = 'output'; // Indicate that a command output is displayed
-        contentDisplay.classList.remove('hidden'); // Ensure content display is visible
-    }
-}
-
-// Help function
-function showHelp() {
-    const helpText = `
-╔════════════════════════════════════════════════════════════════╗
-║                   AVAILABLE COMMANDS                           ║
-╠════════════════════════════════════════════════════════════════╣
-║ Navigation Commands:                                           ║
-║ • about         - Show about information                       ║
-║ • skills        - Display technical skills                     ║
-║ • projects      - Show project portfolio                       ║
-║ • contact       - Show contact information                     ║
-║ • cv / resume   - Display CV/Resume                            ║
-║ • github        - Open GitHub profile                          ║
-║                                                                ║
-║ CV Commands:                                                   ║
-║ • cv-detailed   - Show detailed CV                             ║
-║ • download-cv   - Download PDF version                         ║
-║                                                                ║
-║ Utility Commands:                                              ║
-║ • clear / cls   - Clear terminal                               ║
-║ • help          - Show this help message                       ║
-║ • ls            - List common files (easter egg)               ║
-║ • pwd           - Print working directory (easter egg)         ║
-║ • whoami        - Show current user (easter egg)               ║
-║ • date          - Show current date/time (easter egg)          ║
-║ • uptime        - Show system uptime (easter egg)              ║
-║ • ps            - Show running processes (easter egg)          ║
-║ • free          - Show memory usage (easter egg)               ║
-║ • df            - Show disk space (easter egg)                 ║
-║ • cat /etc/motd - Display message of the day (easter egg)      ║
-║                                                                ║
-║ You can also use the navigation buttons above!                 ║
-╚════════════════════════════════════════════════════════════════╝
-    `;
-    
-    displayOutput(helpText);
-}
-
-// Enhanced command handler (add to your existing command processing)
-function handleCommand(command) {
-    const cmd = command.toLowerCase().trim();
-    
-    switch(cmd) {
-        case 'cv':
-        case 'resume':
-            showCV();
-            break;
-        case 'clear':
-        case 'cls':
-            clearTerminal();
-            break;
-        case 'download-cv':
-            downloadCV();
-            break;
-            break;
-        case 'help':
-            showHelp();
-            break;
-        case 'about':
-        case 'skills':
-        case 'projects':
-        case 'contact':
-        case 'github':
-            showSection(cmd); // This will use the existing showSection logic
-            break;
-        default:
-            const terminalOutput = handleTerminalCommand(command); // Use the existing easter egg handler
-            displayOutput(terminalOutput); // Display the output from the easter egg handler
-    }
-}
-
-// Export functions for potential future use (updated to include new functions)
-window.portfolioFunctions = {
-    showSection,
-    simulateTyping,
-    handleTerminalCommand,
-    downloadCV,
-    previewCV,
-    closeCVModal,
-    showCV,         // New
-    clearTerminal,  // New
-    handleCommand,  // New
-    showDetailedCV, // New
-    showHelp,       // New
-    displayOutput   // New
-};
+});

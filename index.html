@@ -3,98 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet Bhatt's Portfolio | Data Steward</title>
-    <meta name="description" content="Meet2197's interactive terminal-style portfolio showcasing data science projects, laboratory information systems, and bioinformatics tools.">
+    <title>Your Terminal Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="terminal-container">
         <div class="terminal">
-            <!-- Terminal Header -->
             <div class="terminal-header">
                 <div class="terminal-buttons">
-                    <div class="terminal-button close"></div>
-                    <div class="terminal-button minimize"></div>
-                    <div class="terminal-button maximize"></div>
+                    <span class="terminal-button close"></span>
+                    <span class="terminal-button minimize"></span>
+                    <span class="terminal-button maximize"></span>
                 </div>
-                <span class="terminal-title">visitor@meet2197:~$</span>
+                <div class="terminal-title">user@portfolio:~</div>
             </div>
-            
-            <!-- Terminal Content -->
-            <div class="terminal-content">
-                <div class="terminal-line">
-                    <span class="prompt">visitor@meet2197:~$</span> 
-                    <span class="command">whoami</span>
-                </div>
-                <div class="terminal-line">Data Steward</div>
-                <div class="terminal-line">Type 'help' to see available commands.</div>
-                <div class="terminal-line">&nbsp;</div>
-                
-                <!-- Welcome Box -->
+            <div class="terminal-content" id="terminalContent">
                 <div class="welcome-box">
                     <div class="box-border">
-                        <div class="welcome-title">Welcome to Meet Bhatt's Portfolio</div>
-                        <div class="welcome-text">
-                            Data Steward <br>
-                            Specializing in Data science centric technologies
-                        </div>
-                    </div>
                 </div>
-                
-                <div class="terminal-line">&nbsp;</div>
-                <div class="terminal-prompt">
-                    <span class="prompt">visitor@meet2197:~$</span>
-                    <span class="cursor">|</span>
                 </div>
-                
-                <!-- Navigation Buttons -->
+
                 <div class="button-grid">
-                    <button class="terminal-nav-button" onclick="showSection('about')">
+                    <button class="terminal-nav-button" data-command="about">
                         <span class="button-text">about</span>
                     </button>
-                    <button class="terminal-nav-button" onclick="showSection('skills')">
+                    <button class="terminal-nav-button" data-command="skills">
                         <span class="button-text">skills</span>
                     </button>
-                    <button class="terminal-nav-button" onclick="showSection('projects')">
+                    <button class="terminal-nav-button" data-command="projects">
                         <span class="button-text">projects</span>
                     </button>
-                    <button class="terminal-nav-button" onclick="showSection('contact')">
+                    <button class="terminal-nav-button" data-command="contact">
                         <span class="button-text">contact</span>
                     </button>
-                    <button class="terminal-nav-button" onclick="showSection('resume')">
+                    <button class="terminal-nav-button" data-command="resume">
                         <span class="button-text">resume</span>
                     </button>
-                    <button class="terminal-nav-button" onclick="showSection('github')">
+                    <button class="terminal-nav-button" data-command="github">
                         <span class="button-text">github</span>
                     </button>
-                    <button class="terminal-nav-button cv-button" onclick="showCV()">
-                        <span class="button-text">cv</span>
-                    </button>
-                    <button class="terminal-nav-button clear-button" onclick="clearTerminal()">
+                    <button class="terminal-nav-button clear-button" data-command="clear">
                         <span class="button-text">clear</span>
                     </button>
+                    <button class="terminal-nav-button" data-command="help">
+                        <span class="button-text">help</span>
+                    </button>
                 </div>
-                
-                <!-- Content Display Area -->
+
+                <div class="terminal-line terminal-prompt">
+                    <span class="prompt">user@portfolio:~$</span>
+                    <span id="userInput" class="command" contenteditable="true" spellcheck="false"></span><span class="cursor">_</span>
+                </div>
+
                 <div id="content-display" class="content-display hidden">
                     <div class="terminal-line">
-                        <span class="prompt">visitor@meet2197:~$</span> 
-                        <span class="command" id="current-command"></span>
+                        <span class="prompt">user@portfolio:~$ <span id="current-command"></span></span>
                     </div>
-                    <div id="content-output" class="content-output"></div>
-                    <div class="terminal-line">&nbsp;</div>
-                    <div class="terminal-line">
-                        <span class="prompt">visitor@meet2197:~$</span>
-                        <span class="cursor">|</span>
-                    </div>
+                    <div id="output" class="content-output">
+                        </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
