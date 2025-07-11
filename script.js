@@ -4,13 +4,12 @@ const portfolioData = {
         title: "About Me",
         content: `
             <h3>$ cat about.txt</h3>
-            <p>Hello! I'm Meet Bhatt, a Data Steward at DFG cluster of excellence, Physics of Life, TU Dresden 🏀</p>
+            <p>Hello! I'm Meet Bhatt, a Data Steward</p>
             <p>Based in Dresden, Germany, I specialize in:</p>
             <ul>
                 <li>🔬 Laboratory Information Management Systems (LIMS)</li>
                 <li>📊 Data analysis and visualization</li>
-                <li>🧬 Bioinformatics and psychological data analysis</li>
-                <li>⚡ Full-stack web development</li>
+                <li>🧬 Bioinformatic data experinced</li>
                 <li>🔧 API development and integration</li>
                 <li>📈 Scientific data management and workflows</li>
             </ul>
@@ -167,8 +166,7 @@ const portfolioData = {
             <ul>
                 <li>🔬 Laboratory Information Management Systems (LIMS)</li>
                 <li>📊 Scientific data analysis and visualization</li>
-                <li>💻 Full-stack web development</li>
-                <li>🧬 Bioinformatics and psychological data analysis</li>
+                <li>🧬 Bioinformatics data analysis</li>
                 <li>🔧 API development and system integration</li>
                 <li>📈 Research data management workflows</li>
             </ul>
@@ -177,15 +175,15 @@ const portfolioData = {
             <ul>
                 <li>Languages: JavaScript, Python, Java, R, HTML/CSS</li>
                 <li>Frameworks: React.js, Node.js, Vue.js</li>
-                <li>Databases: MongoDB, Firebase</li>
-                <li>Tools: Git, GitHub, Chart.js, APIs</li>
+                <li>Databases: Postgres</li>
+                <li>Tools: Git, GitHub, Gitlab</li>
             </ul>
             
             <p><strong>Education:</strong></p>
             <ul>
                 <li>🎓 Master's Degree (Research documented in GitHub)</li>
                 <li>📚 Specialized in Physics of Life research</li>
-                <li>🔬 Focus on data stewardship and bioinformatics</li>
+                <li>🔬 Focus on data science</li>
             </ul>
         `
     },
@@ -517,9 +515,8 @@ console.log(`
     ╔══════════════════════════════════════════════════════════════╗
     ║               Welcome to Meet Bhatt's Terminal Portfolio     ║
     ║                                                              ║
-    ║  👋 Hello! I'm Meet - Data Steward at TU Dresden             ║
-    ║  🔬 Specializing in LIMS and bioinformatics                  ║
-    ║  💻 Full-stack developer with scientific background          ║
+    ║  👋 Hello! I'm Meet Bhatt - Data Steward                     ║
+    ║  🔬 Specializing in Data science centric technology          ║
     ║                                                              ║
     ║  🎯 Keyboard shortcuts:                                      ║
     ║     Ctrl+1: About    Ctrl+2: Skills    Ctrl+3: Projects      ║
@@ -552,15 +549,136 @@ function handleTerminalCommand(command) {
                 <div class="terminal-line">${output}</div>`;
     }
     return `<div class="terminal-line"><span class="prompt">visitor@Meet_Bhatt:~$</span> ${command}</div>
-            <div class="terminal-line">Command not found. Try: about, skills, projects, contact, resume, github</div>`;
+            <div class="terminal-line">Command not found. Type 'help' for available commands.</div>`; // Modified to suggest 'help'
 }
 
-// Export functions for potential future use
+// Clear Terminal Function
+function clearTerminal() {
+    // Clear the main content area
+    const outputArea = document.getElementById('content-output'); // Changed to content-output based on showSection usage
+    if (outputArea) {
+        outputArea.innerHTML = '';
+    }
+    
+    // Reset to welcome message
+    const welcomeMessage = `
+╔════════════════════════════════════════════════════════════════╗
+║                   Welcome to Meet2197's Portfolio              ║
+╠════════════════════════════════════════════════════════════════╣
+║ Data Steward at DFG cluster of excellence, Physics of Life,    ║
+║ TU Dresden                                                     ║
+║ Specializing in Laboratory Information Management Systems      ║
+║ & Bioinformatics                                               ║
+╚════════════════════════════════════════════════════════════════╝
+
+Use the navigation buttons or type 'help' to see available commands.
+    `;
+    
+    displayOutput(welcomeMessage);
+    
+    // Also hide the content display area
+    const contentDisplay = document.getElementById('content-display');
+    if (contentDisplay) {
+        contentDisplay.classList.add('hidden');
+    }
+}
+
+// Utility function to display output (modified to also update current-command)
+function displayOutput(content) {
+    const contentOutput = document.getElementById('content-output');
+    const currentCommand = document.getElementById('current-command');
+    const contentDisplay = document.getElementById('content-display');
+
+    if (contentOutput) {
+        contentOutput.innerHTML = `<pre>${content}</pre>`;
+        currentCommand.textContent = 'output'; // Indicate that a command output is displayed
+        contentDisplay.classList.remove('hidden'); // Ensure content display is visible
+    }
+}
+
+// Help function
+function showHelp() {
+    const helpText = `
+╔════════════════════════════════════════════════════════════════╗
+║                   AVAILABLE COMMANDS                           ║
+╠════════════════════════════════════════════════════════════════╣
+║ Navigation Commands:                                           ║
+║ • about         - Show about information                       ║
+║ • skills        - Display technical skills                     ║
+║ • projects      - Show project portfolio                       ║
+║ • contact       - Show contact information                     ║
+║ • cv / resume   - Display CV/Resume                            ║
+║ • github        - Open GitHub profile                          ║
+║                                                                ║
+║ CV Commands:                                                   ║
+║ • cv-detailed   - Show detailed CV                             ║
+║ • download-cv   - Download PDF version                         ║
+║                                                                ║
+║ Utility Commands:                                              ║
+║ • clear / cls   - Clear terminal                               ║
+║ • help          - Show this help message                       ║
+║ • ls            - List common files (easter egg)               ║
+║ • pwd           - Print working directory (easter egg)         ║
+║ • whoami        - Show current user (easter egg)               ║
+║ • date          - Show current date/time (easter egg)          ║
+║ • uptime        - Show system uptime (easter egg)              ║
+║ • ps            - Show running processes (easter egg)          ║
+║ • free          - Show memory usage (easter egg)               ║
+║ • df            - Show disk space (easter egg)                 ║
+║ • cat /etc/motd - Display message of the day (easter egg)      ║
+║                                                                ║
+║ You can also use the navigation buttons above!                 ║
+╚════════════════════════════════════════════════════════════════╝
+    `;
+    
+    displayOutput(helpText);
+}
+
+// Enhanced command handler (add to your existing command processing)
+function handleCommand(command) {
+    const cmd = command.toLowerCase().trim();
+    
+    switch(cmd) {
+        case 'cv':
+        case 'resume':
+            showCV();
+            break;
+        case 'clear':
+        case 'cls':
+            clearTerminal();
+            break;
+        case 'download-cv':
+            downloadCV();
+            break;
+            break;
+        case 'help':
+            showHelp();
+            break;
+        case 'about':
+        case 'skills':
+        case 'projects':
+        case 'contact':
+        case 'github':
+            showSection(cmd); // This will use the existing showSection logic
+            break;
+        default:
+            const terminalOutput = handleTerminalCommand(command); // Use the existing easter egg handler
+            displayOutput(terminalOutput); // Display the output from the easter egg handler
+    }
+}
+
+// Export functions for potential future use (updated to include new functions)
 window.portfolioFunctions = {
     showSection,
     simulateTyping,
     handleTerminalCommand,
     downloadCV,
     previewCV,
-    closeCVModal
+    closeCVModal,
+    showCV,         // New
+    clearTerminal,  // New
+    handleCommand,  // New
+    showDetailedCV, // New
+    showHelp,       // New
+    displayOutput   // New
 };

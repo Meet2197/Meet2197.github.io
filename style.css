@@ -259,6 +259,35 @@ body {
   z-index: 1;
 }
 
+/* Special Button Styles */
+.cv-button {
+  background: linear-gradient(135deg, #0066cc 0%, #0088ff 100%);
+  color: #ffffff;
+  border: 1px solid #0088ff;
+}
+
+.cv-button:hover {
+  background: linear-gradient(135deg, #0088ff 0%, #00aaff 100%);
+  color: #000000;
+  box-shadow: 
+      0 5px 15px rgba(0, 136, 255, 0.3),
+      0 0 20px rgba(0, 136, 255, 0.2);
+}
+
+.clear-button {
+  background: linear-gradient(135deg, #cc0000 0%, #ff0000 100%);
+  color: #ffffff;
+  border: 1px solid #ff0000;
+}
+
+.clear-button:hover {
+  background: linear-gradient(135deg, #ff0000 0%, #ff3333 100%);
+  color: #000000;
+  box-shadow: 
+      0 5px 15px rgba(255, 0, 0, 0.3),
+      0 0 20px rgba(255, 0, 0, 0.2);
+}
+
 /* Content Display */
 .content-display {
   margin-top: 25px;
@@ -322,6 +351,221 @@ body {
   opacity: 0.8;
 }
 
+/* CV Specific Styles */
+.cv-download-section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.cv-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.cv-download-btn, .cv-preview-btn {
+    padding: 10px 15px;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cv-download-btn:hover, .cv-preview-btn:hover {
+    background-color: #00cc00;
+    transform: translateY(-2px);
+}
+
+.cv-download-btn:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cv-icon {
+    font-size: 14px;
+}
+
+/* CV Modal Styles */
+.cv-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.cv-modal-content {
+    background-color: #000;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.cv-modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #00ff00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #001100 0%, #003300 100%);
+}
+
+.cv-modal-header h3 {
+    color: #00ff00;
+    font-size: 16px;
+    margin: 0;
+}
+
+.cv-modal-close {
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.cv-modal-close:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.cv-modal-body {
+    padding: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    color: #00ffff;
+}
+
+.cv-instructions {
+    line-height: 1.6;
+}
+
+.cv-instructions h4 {
+    color: #00ff00;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.cv-instructions ol, .cv-instructions ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.cv-instructions pre {
+    background-color: rgba(0, 255, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+.cv-instructions code {
+    background-color: rgba(0, 255, 0, 0.2);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Fira Code', monospace;
+}
+
+.cv-temp-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* CV Content Styles */
+.cv-content {
+    white-space: pre-wrap;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #00ffff;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #00ff00;
+}
+
+.cv-section-title {
+    color: #00ff00;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.cv-item {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #00ff00;
+}
+
+.cv-item h4 {
+    color: #00ff00;
+    margin-bottom: 5px;
+}
+
+.cv-item p {
+    margin-bottom: 5px;
+}
+
+.cv-commands {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 255, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid #00ff00;
+}
+
+.cv-commands h4 {
+    color: #00ff00;
+    margin-bottom: 10px;
+}
+
+.cv-commands ul {
+    margin-left: 20px;
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0.6;
+    animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .terminal-container {
@@ -355,6 +599,15 @@ body {
   .welcome-text {
       font-size: 13px;
   }
+
+  .cv-buttons {
+      flex-direction: column;
+  }
+
+  .cv-modal-content {
+      max-width: 95%;
+      max-height: 95%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -379,6 +632,11 @@ body {
       padding: 10px 12px;
       font-size: 12px;
   }
+
+  .cv-content {
+      font-size: 11px;
+      padding: 15px;
+  }
 }
 
 /* Scrollbar Styling */
@@ -397,76 +655,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #00cc00;
-}
-
-.cv-download-section {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #00ff00;
-    border-radius: 5px;
-    background-color: rgba(0, 255, 0, 0.1);
-}
-
-.cv-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.cv-download-btn, .cv-preview-btn {
-    padding: 10px 15px;
-    background-color: #00ff00;
-    color: #000;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-family: 'Courier New', monospace;
-    transition: all 0.3s ease;
-}
-
-.cv-download-btn:hover, .cv-preview-btn:hover {
-    background-color: #00cc00;
-    transform: translateY(-2px);
-}
-
-.cv-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.cv-modal-content {
-    background-color: #000;
-    border: 2px solid #00ff00;
-    border-radius: 10px;
-    max-width: 90%;
-    max-height: 90%;
-    overflow: hidden;
-}
-
-.cv-modal-header {
-    padding: 15px;
-    border-bottom: 1px solid #00ff00;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cv-modal-close {
-    background: none;
-    border: none;
-    color: #00ff00;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.cv-modal-body {
-    padding: 20px;
 }
