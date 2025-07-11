@@ -1,46 +1,78 @@
-# Portfolio
+# 🌐 Meet Bhatt's Portfolio
 
-https://meet2197.github.io/
+Welcome to my professional portfolio! I’m a **Data Steward** with 3+ years of experience specializing in:
 
-## About
+- 🧬 **Bioinformatics & Computational Biology**
+- 🧪 **LIMS (Laboratory Information Management Systems)**
+- 📊 **Data Analysis & Visualization**
+- 💾 **Software Engineering for Scientific Data**
 
-This portfolio showcases my work in:
-- **Data Stewardship** at Physics of Life, TU Dresden
-- **Laboratory Information Management Systems (LIMS)**
-- **Bioinformatics and Computational Biology**
-- **Data Analysis and Visualization**
+This portfolio highlights my journey, projects, and research contributions in the intersection of life sciences and software development.
 
-## Featured Projects
+---
 
-### 1. LIMS System 🧪
-Laboratory Information Management System designed to help laboratories manage data, samples, and workflows efficiently.
-- **Technologies**: JavaScript, MIT License
-- **Repository**: [LIMS-system](https://github.com/Meet2197/LIMS-system)
+## 🚀 About Me
 
-### 2. JSON Viewer 📋
-Tool for observing and analyzing JSON files with interactive data visualization.
-- **Technologies**: JavaScript, MIT License
-- **Repository**: [JSON-viewer](https://github.com/Meet2197/JSON-viewer)
+🎓 **Current Role**: Data Steward at *Physics of Life*, TU Dresden  
+🔬 **Background**: Master’s degree in Bioinformatics | Focused on data stewardship, FAIR data principles, and scientific software  
+🛠️ **Passion**: Building tools that make science more reproducible, scalable, and accessible
 
-### 3. DRE API 🌐
-Java-based API development project with backend service architecture.
-- **Technologies**: Java, Apache License 2.0
-- **Repository**: [DRE-Api](https://github.com/Meet2197/DRE-Api)
+---
 
-## Research Projects
+## 📌 Featured Projects
 
-- **Psychological Data Analysis**: Python-based statistical analysis and visualization
-- **Metabolites Visualisation**: R-based tools for metabolite data visualization
-- **Master's Thesis**: Research documentation and findings
+### 🧪 [LIMS System](https://github.com/Meet2197/LIMS-system)
+A modern Laboratory Information Management System to help labs track samples, experiments, and workflows.
 
-## Technologies Used
+- **Tech Stack**: JavaScript (Frontend), Python/Django (Backend), Docker, SQLite
+- **Features**: Sample tracking, experiment logging, user authentication, import/export, REST & GraphQL APIs
+- **Why it matters**: Reduces manual errors and increases lab efficiency
 
-- **Languages**: JavaScript, Python, Java, R, HTML5, CSS3
-- **Specializations**: LIMS, Data Stewardship, Bioinformatics
-- **Tools**: Git, GitHub, Statistical Analysis, API Development
+---
 
-## Quick Start
+### 📋 [JSON Viewer](https://github.com/Meet2197/JSON-viewer)
+Interactive tool to load, navigate, and analyze JSON datasets directly in the browser.
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Meet2197/Meet2197.github.io.git
+- **Tech Stack**: Vanilla JavaScript + DOM APIs
+- **Use Case**: Developers and researchers working with structured API responses
+- **License**: MIT
+
+---
+
+### 🌐 [DRE API](https://github.com/Meet2197/DRE-Api)
+A backend service built in Java for robust API management and data routing.
+
+- **Tech Stack**: Java, Maven, Spring Boot
+- **Purpose**: Modular API for data-intensive applications
+- **License**: Apache 2.0
+
+---
+
+## 🧪 Research Projects
+
+- **Psychological Data Analysis** – Advanced statistical modeling and data visualization using Python
+- **Metabolite Visualization** – R-based tools for biochemical pathway mapping
+- **Master’s Thesis** – Computational methods for biological data integration
+
+---
+
+## 🛠️ Tech Toolbox
+
+| Category         | Tools & Technologies                             |
+|------------------|--------------------------------------------------|
+| **Languages**    | Python, JavaScript, Java, R, HTML, CSS           |
+| **Frameworks**   | Django, React.js, Spring Boot                    |
+| **Data Science** | Pandas, NumPy, Matplotlib, Seaborn               |
+| **DevOps**       | Docker, GitHub Actions, Git, Linux               |
+| **Databases**    | SQLite, PostgreSQL                               |
+| **Other**        | REST APIs, GraphQL, Bioinformatics tools         |
+
+---
+
+## 📥 Quick Start
+
+Clone this portfolio to explore or customize your own:
+
+```bash
+git clone https://github.com/Meet2197/Meet2197.github.io.git
+cd Meet2197.github.io
