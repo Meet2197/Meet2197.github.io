@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
                 default:
                     // If not a recognized command, display an error message
-                    outputHTML = `<span class="error-output">Error: Command '${command}' not found. Type 'help' for a list of commands.</span>`;
+                    outputHTML = `<span class="error-output">Command '${command}' not found. Type 'help' for a list of commands.</span>`;
                     displayOutput(outputHTML, false); // Display as plain text error message
                     break;
             }
