@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const terminalContent = document.getElementById('terminalContent');
     const userInput = document.getElementById('userInput');
-    const outputDiv = document.getElementById('output'); // This will now be primarily for command output
-    const contentDisplay = document.getElementById('content-display'); // The container for outputDiv
+    const outputDiv = document.getElementById('output');
+    const contentDisplay = document.getElementById('content-display');
 
     let history = [];
     let historyIndex = -1;
 
-    // Portfolio Data - Updated with Meet2197's actual repositories and details
+    // Portfolio Data
     const portfolioData = {
         about: {
             title: "About Me",
@@ -41,10 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <ul>
                     <li>React.js - Interactive UIs</li>
                     <li>Node.js - Server-side applications</li>
+                    <li>Vue.js - Progressive web apps</li>
+                    <li>Chart.js - Data visualization</li>
+                    <li>Firebase - Real-time databases</li>
                 </ul>
                 <p><strong>Scientific & Data Tools:</strong></p>
                 <ul>
                     <li>LIMS Systems - Laboratory data management</li>
+                    <li>MongoDB - NoSQL databases</li>
                     <li>APIs - RESTful services</li>
                     <li>Git & GitHub - Version control</li>
                     <li>JSON Processing - Data interchange</li>
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="project-divider">───────────────────────────────────────────────────────────────</div>
 
                     <div class="project-item">
-                        <h4>1. LIMS System 🔍</h4>
+                        <h4>1. LIMS System ⚛</></h4>
                         <ul>
                             <li>Laboratory Information Management System</li>
                             <li>Streamlines laboratory operations & improves data accuracy</li>
@@ -79,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="project-item">
-                        <h4>3. DRE API 🗄️</h4>
+                        <h4>3. DRE API 📟</h4>
                         <ul>
                             <li>Java-based API development project</li>
                             <li>Backend services and data processing</li>
@@ -115,10 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
             content: `
                 <h3>$ cat contact.txt</h3>
                 <p>📍 <strong>Location:</strong> Dresden, Germany</p>
-                <p>🏢 <strong>Position:</strong> Data Steward, Physics of Life, TU Dresden</p>
+                <p>🏢 <strong>Position:</strong> Data Steward at DFG cluster of excellence, Physics of Life, TU Dresden</p>
                 <p>Let's connect! You can reach me through:</p>
                 <ul>
-                    <li>📧 Email: <a href="mailto:eet.bhatt@etu.unice.fr ">meet.bhatt@etu.unice.fr </a></li>
+                    <li>📧 Email: <a href="mailto:meet.bhatt@etu.unice.fr">meet.bhatt@etu.unice.fr</a></li>
                     <li>🔗 LinkedIn: <a href="https://linkedin.com/in/meet2197" target="_blank">linkedin.com/in/meet2197</a></li>
                     <li>🐙 GitHub: <a href="https://github.com/Meet2197" target="_blank">github.com/Meet2197</a></li>
                 </ul>
@@ -137,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>$ cat resume.pdf</h3>
                 <p><strong>Current Position:</strong></p>
                 <ul>
-                    <li>🏢 Data Steward at DFG cluster of excellence</li>
+                    <li>🏢 Data Steward</li>
                     <li>🎯 Physics of Life, TU Dresden</li>
                     <li>📍 Dresden, Germany</li>
                 </ul>
@@ -145,10 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="resume-download-section">
                     <h4>📄 Download Resume:</h4>
                     <div class="resume-buttons">
-                        <button class="terminal-nav-button download-btn" onclick="downloadResume()">
+                        <button class="terminal-nav-button download-btn" onclick="window.downloadResume()">
                             <span class="button-text">📥 Download PDF</span>
                         </button>
-                        <button class="terminal-nav-button preview-btn" onclick="previewResume()">
+                        <button class="terminal-nav-button preview-btn" onclick="window.previewResume()">
                             <span class="button-text">👁️ Preview</span>
                         </button>
                     </div>
@@ -188,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <p><strong>🌟 Featured Repositories:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">🔍 LIMS System</a> - Laboratory Information Management</li>
+                    <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">🔬 LIMS System</a> - Laboratory Information Management</li>
                     <li><a href="https://github.com/Meet2197/JSON-viewer" target="_blank">📋 JSON Viewer</a> - Data visualization tool</li>
                     <li><a href="https://github.com/Meet2197/DRE-Api" target="_blank">⚡ DRE API</a> - Java-based API services</li>
                     <li><a href="https://github.com/Meet2197/Psychological-data-analysis" target="_blank">🧠 Psychological Data Analysis</a> - Python analytics</li>
@@ -207,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <p><strong>📈 Recent Activity:</strong></p>
                 <ul>
-                    <li>🔄 Latest update: ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} (Terminal Portfolio)</li>
+                    <li>🔄 Latest update: ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</li>
                     <li>🛠️ LIMS System updated: ${new Date(new Date().setDate(new Date().getDate() - 1)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</li>
                     <li>📊 JSON Viewer updated: ${new Date(new Date().setDate(new Date().getDate() - 2)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</li>
                     <li>⚡ Active development across multiple projects</li>
@@ -284,14 +288,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             switch (lowerCommand) {
                 case 'help':
-                    outputHTML = showHelp(); // Call showHelp to get the content
-                    displayOutput(outputHTML, true); // Display as rich HTML
+                    outputHTML = showHelp();
+                    displayOutput(outputHTML, true);
                     break;
                 case 'about':
                 case 'skills':
                 case 'projects':
                 case 'contact':
-                case 'resume': // Now only 'resume' command is recognized for this content
+                case 'resume':
                 case 'github':
                     showSection(lowerCommand);
                     break;
@@ -299,16 +303,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'cls':
                     clearTerminal();
                     break;
-                case 'download-resume': // New command for direct download
-                    downloadResume();
+                case 'download-resume':
+                    window.downloadResume(); // Call through window object
                     break;
-                case 'preview-resume': // New command for direct preview
-                    previewResume();
+                case 'preview-resume':
+                    window.previewResume(); // Call through window object
                     break;
                 default:
-                    // If not a recognized command, just echo the input
-                    outputHTML = `<span class="echo-output">${command}</span>`;
-                    displayOutput(outputHTML, false); // Display as plain text echo
+                    // If not a recognized command, display an error message
+                    outputHTML = `<span class="error-output">Error: Command '${command}' not found. Type 'help' for a list of commands.</span>`;
+                    displayOutput(outputHTML, false); // Display as plain text error message
                     break;
             }
         }, 300); // Small delay to simulate processing
@@ -316,26 +320,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Terminal UI Functions ---
     function appendCommandToTerminal(command) {
-    const newPromptLine = document.createElement('div');
-    newPromptLine.classList.add('terminal-line');
-    // Changed from 𝛑 ~$&nbsp; to 𝛑 ~&nbsp;
-    newPromptLine.innerHTML = `<span class="prompt">𝛑 ~&nbsp;</span> <span class="command">${command}</span>`; 
-    terminalContent.insertBefore(newPromptLine, document.querySelector('.terminal-prompt'));
-}
+        const newPromptLine = document.createElement('div');
+        newPromptLine.classList.add('terminal-line');
+        newPromptLine.innerHTML = `<span class="prompt">𝛑 &nbsp;</span> <span class="command">${command}</span>`;
+        terminalContent.insertBefore(newPromptLine, document.querySelector('.terminal-prompt'));
+    }
 
     // Enhanced show section function with animations
     function showSection(section) {
-        const currentCommand = document.getElementById('current-command'); // Make sure this element exists in HTML
-        
+        const currentCommand = document.getElementById('current-command');
+
         if (portfolioData[section]) {
             // Add loading animation
             contentDisplay.classList.add('loading');
-            
+
             setTimeout(() => {
                 currentCommand.textContent = section; // Update the title in the content area
                 outputDiv.innerHTML = portfolioData[section].content; // Use outputDiv for content
                 contentDisplay.classList.remove('hidden', 'loading');
-                
+
                 // Add typing effect for project items if applicable
                 if (section === 'projects') {
                     const projectItems = outputDiv.querySelectorAll('.project-item');
@@ -349,12 +352,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         }, index * 200);
                     });
                 }
-                
+
                 // Smooth scroll to content
                 setTimeout(() => {
-                    contentDisplay.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'start' 
+                    contentDisplay.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }, 100);
             }, 500);
@@ -397,68 +400,62 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure the welcome box is visible after clearing
         const welcomeBox = document.querySelector('.welcome-box');
         if (welcomeBox) {
-            welcomeBox.style.display = 'block'; // Or whatever its default display was
-            welcomeBox.classList.remove('hidden'); // Ensure it's not hidden
+            welcomeBox.style.display = 'block';
+            welcomeBox.classList.remove('hidden');
         }
-        closeResumeModal(); // Close any open modal
+        window.closeResumeModal(); // Close any open modal
         terminalContent.scrollTop = terminalContent.scrollHeight; // Scroll to bottom
     }
 
-    // --- Resume Download and Preview Functions (Renamed from CV) ---
-    function downloadResume() {
+    // --- Resume Download and Preview Functions ---
+    window.downloadResume = function() { // Made globally accessible
         const button = event.target.closest('.download-btn');
         const originalContent = button.innerHTML;
         button.innerHTML = '<span class="button-text">⏳ Preparing...</span>';
         button.disabled = true;
-        
-        const filePath = 'assets/Meet2197_Resume.pdf'; // Ensure your PDF is here
-        
-        // Use fetch to check if the file exists and is accessible
+
+        const filePath = 'assets/Meet2197_Resume.pdf';
+
         fetch(filePath, { method: 'HEAD' })
             .then(response => {
                 if (response.ok) {
-                    // File exists, proceed with download
                     const link = document.createElement('a');
                     link.href = filePath;
-                    link.download = 'Meet2197_Resume.pdf'; // Suggested file name
+                    link.download = 'Meet2197_Resume.pdf';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
                     console.log("Resume download initiated successfully.");
                 } else {
-                    // File not found or inaccessible (e.g., 404, CORS issue)
                     console.error(`Error ${response.status} fetching resume file. Check path or server configuration.`);
-                    showResumeUploadInstructions();
+                    window.showResumeUploadInstructions(); // Call through window.
                 }
             })
             .catch(error => {
-                // Network error, CORS error, or file not found if local file://
                 console.error("Failed to fetch resume file. This might be due to CORS/security restrictions when running locally.", error);
-                showResumeUploadInstructions();
+                window.showResumeUploadInstructions(); // Call through window.
             })
             .finally(() => {
-                // Reset button state after attempt
                 setTimeout(() => {
                     button.innerHTML = originalContent;
                     button.disabled = false;
-                }, 500); // Short delay for visual feedback
+                }, 500);
             });
-    }
+    };
 
-    function previewResume() {
-        const filePath = 'assets/Meet2197_Resume.pdf'; // Ensure your PDF is here
-        
-        // Attempt to create and open the modal
+    window.previewResume = function() { // Made globally accessible
+        const filePath = 'assets/Meet2197_Resume.pdf';
+    
         const modal = document.createElement('div');
-        modal.className = 'resume-modal'; // Renamed class
+        modal.className = 'resume-modal';
         modal.innerHTML = `
             <div class="resume-modal-content">
                 <div class="resume-modal-header">
                     <h3>📄 Resume Preview</h3>
-                    <button class="resume-modal-close" onclick="closeResumeModal()">&times;</button>
+                    <button class="resume-modal-close" onclick="window.closeResumeModal()">&times;</button>
                 </div>
                 <div class="resume-modal-body">
-                    <iframe src="${filePath}" width="100%" height="600px" frameborder="0">
+                    <iframe src="${filePath}" width="100%" height="100%" frameborder="0"> // CHANGED height to "100%"
                         <p>Your browser does not support PDFs directly in this window.
                         <a href="${filePath}" target="_blank">Click here to download/view the PDF directly</a>.</p>
                     </iframe>
@@ -466,42 +463,36 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         document.body.appendChild(modal);
-        
+    
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                closeResumeModal();
+                window.closeResumeModal();
             }
         });
-
-        // Add a simple check for iframe load (not foolproof for all errors)
+    
         const iframe = modal.querySelector('iframe');
         iframe.onload = () => console.log(`Resume preview loaded from: ${filePath}`);
         iframe.onerror = () => {
             console.error(`Failed to load resume preview from: ${filePath}. This often happens with local file:// paths due to browser security.`);
-            // Optionally, remove the iframe and show instructions if it fails
-            // modal.querySelector('.resume-modal-body').innerHTML = `
-            //     <p>Could not load PDF preview. This might be due to browser security restrictions when running locally.</p>
-            //     <p><a href="${filePath}" target="_blank">Click here to download/view the PDF directly</a>.</p>
-            // `;
         };
         console.log(`Attempting to preview resume from: ${filePath}`);
-    }
+    };
 
-    function closeResumeModal() {
-        const modal = document.querySelector('.resume-modal'); // Renamed class
+    window.closeResumeModal = function() { // Made globally accessible
+        const modal = document.querySelector('.resume-modal');
         if (modal) {
             modal.remove();
         }
-    }
+    };
 
-    function showResumeUploadInstructions() {
+    window.showResumeUploadInstructions = function() { // Made globally accessible
         const modal = document.createElement('div');
-        modal.className = 'resume-modal'; // Renamed class
+        modal.className = 'resume-modal';
         modal.innerHTML = `
             <div class="resume-modal-content">
                 <div class="resume-modal-header">
                     <h3>📋 Resume Setup Instructions</h3>
-                    <button class="resume-modal-close" onclick="closeResumeModal()">&times;</button>
+                    <button class="resume-modal-close" onclick="window.closeResumeModal()">&times;</button>
                 </div>
                 <div class="resume-modal-body">
                     <div class="resume-instructions">
@@ -522,7 +513,7 @@ Meet2197.github.io/
                             </li>
                             <li><strong>Important:</strong> Test this by running a local web server (e.g., using VS Code's Live Server extension, or Python's <code>python -m http.server</code> in your project root) or by deploying to GitHub Pages. Directly opening <code>index.html</code> from your file system (<code>file://</code> protocol) often causes security restrictions for loading local files like PDFs.</li>
                         </ol>
-                        
+
                         <h4>🎯 Alternative: Direct Link</h4>
                         <p>You can also link to your Resume hosted elsewhere:</p>
                         <ul>
@@ -530,7 +521,7 @@ Meet2197.github.io/
                             <li>Dropbox public link</li>
                             <li>Your personal website</li>
                         </ul>
-                        
+
                         <div class="resume-temp-buttons">
                             <button class="terminal-nav-button" onclick="window.open('https://drive.google.com/file/d/YOUR_DRIVE_ID/view', '_blank')">
                                 <span class="button-text">🔗 Example: Google Drive Link</span>
@@ -543,12 +534,12 @@ Meet2197.github.io/
         document.body.appendChild(modal);
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                closeResumeModal();
+                window.closeResumeModal();
             }
         });
-    }
+    };
 
-    // --- Help function (Updated to produce HTML) ---
+    // --- Help function ---
     function showHelp() {
         return `
             <h3>Available Commands:</h3>
@@ -573,7 +564,6 @@ Meet2197.github.io/
             </ul>
             <p>You can also use the navigation buttons on the right side!</p>
         `;
-
     }
 
     // Utility function to place caret at the end of contenteditable div
@@ -594,10 +584,10 @@ Meet2197.github.io/
         }
     }
 
-    // Enhanced console easter egg (updated to reflect resume)
+    // Enhanced console easter egg
     console.log(`
     ╔══════════════════════════════════════════════════════════════╗
-    ║               Welcome to Meet Bhatt's Terminal Portfolio     ║
+    ║               Welcome to Meet Bhatt's Portfolio              ║
     ║                                                              ║
     ║  👋 Hello! I'm Meet Bhatt - Data Steward                     ║
     ║  🔬 Specializing in Data science centric technology          ║
@@ -607,6 +597,7 @@ Meet2197.github.io/
     ║     Ctrl+4: Contact  Ctrl+5: Resume    Ctrl+6: GitHub        ║
     ║     Esc: Hide content                                        ║
     ║                                                              ║
+    ║  🚀 Thanks for exploring my portfolio!                       ║
     ║  📧 Feel free to reach out: meet.bhatt@etu.unice.fr          ║
     ╚══════════════════════════════════════════════════════════════╝
 `);
