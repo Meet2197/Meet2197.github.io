@@ -3,47 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal Portfolio - Meet2197</title>
-    <link rel="stylesheet" href="styles/globals.css">
-    <link rel="stylesheet" href="styles/terminal.css">
+    <title>Meet Bhatt's Portfolio | Data Steward</title>
+    <meta name="description" content="Meet2197's interactive terminal-style portfolio showcasing data science projects, laboratory information systems, and bioinformatics tools.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="terminal-container">
         <div class="terminal">
+            <!-- Terminal Header -->
             <div class="terminal-header">
                 <div class="terminal-buttons">
-                    <div class="btn close"></div>
-                    <div class="btn minimize"></div>
-                    <div class="btn maximize"></div>
+                    <div class="terminal-button close"></div>
+                    <div class="terminal-button minimize"></div>
+                    <div class="terminal-button maximize"></div>
                 </div>
-                <div class="terminal-title">visitor@meet2197:~$</div>
+                <span class="terminal-title">visitor@meet2197:~$</span>
             </div>
-            <div class="terminal-body">
-                <div class="terminal-content">
-                    <div class="intro">
-                        <p>Type 'help' to see available commands.</p>
-                    </div>
-                    <div class="output" id="output"></div>
-                    <div class="input-line">
-                        <span class="prompt">visitor@meet2197:~$ </span>
-                        <input type="text" id="terminal-input" autofocus autocomplete="off">
+            
+            <!-- Terminal Content -->
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="prompt">visitor@meet2197:~$</span> 
+                    <span class="command">whoami</span>
+                </div>
+                <div class="terminal-line">Data Steward | Physics of Life | TU Dresden 🏀</div>
+                <div class="terminal-line">Type 'help' to see available commands.</div>
+                <div class="terminal-line">&nbsp;</div>
+                
+                <!-- Welcome Box -->
+                <div class="welcome-box">
+                    <div class="box-border">
+                        <div class="welcome-title">Welcome to Meet2197's Portfolio</div>
+                        <div class="welcome-text">
+                            Data Steward at DFG cluster of excellence, Physics of Life, TU Dresden<br>
+                            Specializing in Laboratory Information Management Systems & Bioinformatics
+                        </div>
                     </div>
                 </div>
-                <div class="command-buttons">
-                    <button class="cmd-btn" data-command="about">about</button>
-                    <button class="cmd-btn" data-command="skills">skills</button>
-                    <button class="cmd-btn" data-command="projects">projects</button>
-                    <button class="cmd-btn" data-command="contact">contact</button>
-                    <button class="cmd-btn" data-command="resume">resume</button>
-                    <button class="cmd-btn" data-command="github">github</button>
-                    <button class="cmd-btn" data-command="linkedin">linkedin</button>
-                    <button class="cmd-btn" data-command="clear">clear</button>
-                    <button class="cmd-btn" data-command="help">help</button>
-                    <button class="cmd-btn" data-command="theme">theme</button>
+                
+                <div class="terminal-line">&nbsp;</div>
+                <div class="terminal-prompt">
+                    <span class="prompt">visitor@meet2197:~$</span>
+                    <span class="cursor">|</span>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <div class="button-grid">
+                    <button class="terminal-nav-button" onclick="showSection('about')">
+                        <span class="button-text">about</span>
+                    </button>
+                    <button class="terminal-nav-button" onclick="showSection('skills')">
+                        <span class="button-text">skills</span>
+                    </button>
+                    <button class="terminal-nav-button" onclick="showSection('projects')">
+                        <span class="button-text">projects</span>
+                    </button>
+                    <button class="terminal-nav-button" onclick="showSection('contact')">
+                        <span class="button-text">contact</span>
+                    </button>
+                    <button class="terminal-nav-button" onclick="showSection('research')">
+                        <span class="button-text">research</span>
+                    </button>
+                    <button class="terminal-nav-button" onclick="showSection('github')">
+                        <span class="button-text">github</span>
+                    </button>
+                </div>
+                
+                <!-- Content Display Area -->
+                <div id="content-display" class="content-display hidden">
+                    <div class="terminal-line">
+                        <span class="prompt">visitor@meet2197:~$</span> 
+                        <span class="command" id="current-command"></span>
+                    </div>
+                    <div id="content-output" class="content-output"></div>
+                    <div class="terminal-line">&nbsp;</div>
+                    <div class="terminal-line">
+                        <span class="prompt">visitor@meet2197:~$</span>
+                        <span class="cursor">|</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

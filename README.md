@@ -1,46 +1,51 @@
-# Terminal Portfolio
+# Meet Bhatt's Terminal Portfolio
 
-An interactive terminal-style portfolio website built with vanilla HTML, CSS, and JavaScript.
+A modern, interactive terminal-style portfolio website for a Data Steward at TU Dresden's Physics of Life research cluster.
 
-## Features
+## About
 
-- Interactive terminal interface
-- Command-line style navigation
-- Clickable buttons for easy access
-- Dark/Light theme toggle
-- Responsive design
-- Auto-deployment via GitHub Actions
+This portfolio showcases my work in:
+- **Data Stewardship** at DFG cluster of excellence, Physics of Life, TU Dresden
+- **Laboratory Information Management Systems (LIMS)**
+- **Bioinformatics and Computational Biology**
+- **Data Analysis and Visualization**
 
-## Available Commands
+## Featured Projects
 
-- `about` - Learn more about me
-- `skills` - View technical skills
-- `projects` - See featured projects
-- `contact` - Get contact information
-- `resume` - View/download resume
-- `github` - Visit GitHub profile
-- `linkedin` - Visit LinkedIn profile
-- `clear` - Clear terminal
-- `theme` - Toggle theme
-- `help` - Show all commands
+### 1. Terminal Portfolio 💻
+Interactive terminal-style portfolio website with command-line interface and clickable buttons.
+- **Technologies**: HTML, CSS, JavaScript, GitHub Actions
+- **Repository**: [Meet2197.github.io](https://github.com/Meet2197/Meet2197.github.io)
 
-## Deployment
+### 2. LIMS System 🧪
+Laboratory Information Management System designed to help laboratories manage data, samples, and workflows efficiently.
+- **Technologies**: JavaScript, MIT License
+- **Repository**: [LIMS-system](https://github.com/Meet2197/LIMS-system)
 
-This site is automatically deployed to GitHub Pages using GitHub Actions whenever changes are pushed to the main branch.
+### 3. JSON Viewer 📋
+Tool for observing and analyzing JSON files with interactive data visualization.
+- **Technologies**: JavaScript, MIT License
+- **Repository**: [JSON-viewer](https://github.com/Meet2197/JSON-viewer)
 
-## Local Development
+### 4. DRE API 🌐
+Java-based API development project with backend service architecture.
+- **Technologies**: Java, Apache License 2.0
+- **Repository**: [DRE-Api](https://github.com/Meet2197/DRE-Api)
 
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Start typing commands or click the buttons
+## Research Projects
 
-## Customization
+- **Psychological Data Analysis**: Python-based statistical analysis and visualization
+- **Metabolites Visualisation**: R-based tools for metabolite data visualization
+- **Master's Thesis**: Research documentation and findings
 
-1. Update the personal information in `script.js`
-2. Modify the styling in `style.css`
-3. Add new commands by extending the `commands` object
-4. Update social links and contact information
+## Technologies Used
 
-## License
+- **Languages**: JavaScript, Python, Java, R, HTML5, CSS3
+- **Specializations**: LIMS, Data Stewardship, Bioinformatics
+- **Tools**: Git, GitHub, Statistical Analysis, API Development
 
-MIT License
+## Quick Start
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Meet2197/Meet2197.github.io.git
