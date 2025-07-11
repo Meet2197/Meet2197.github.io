@@ -32,7 +32,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
       radial-gradient(circle at 20% 80%, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 50%);
   animation: pulse 4s ease-in-out infinite alternate;
@@ -50,7 +50,7 @@ body {
   max-width: 900px;
   background: rgba(0, 0, 0, 0.95);
   border-radius: 12px;
-  box-shadow: 
+  box-shadow:
       0 20px 40px rgba(0, 0, 0, 0.8),
       0 0 0 1px rgba(0, 255, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -89,16 +89,16 @@ body {
   box-shadow: 0 0 5px currentColor;
 }
 
-.close { 
-  background: #ff5f57; 
+.close {
+  background: #ff5f57;
 }
 
-.minimize { 
-  background: #ffbd2e; 
+.minimize {
+  background: #ffbd2e;
 }
 
-.maximize { 
-  background: #28ca42; 
+.maximize {
+  background: #28ca42;
 }
 
 .terminal-title {
@@ -244,7 +244,7 @@ body {
   background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
   color: #000000;
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
       0 5px 15px rgba(0, 255, 0, 0.3),
       0 0 20px rgba(0, 255, 0, 0.2);
   text-shadow: none;
@@ -261,31 +261,31 @@ body {
 
 /* Special Button Styles */
 .cv-button {
-  background: linear-gradient(135deg, #0066cc 0%, #0088ff 100%);
-  color: #ffffff;
-  border: 1px solid #0088ff;
+  background: linear-gradient(135deg, #001100 0%, #003300 100%); /* Changed from blue */
+  color: #00ff00; /* Changed to green */
+  border: 1px solid #00ff00; /* Changed to green */
 }
 
 .cv-button:hover {
-  background: linear-gradient(135deg, #0088ff 0%, #00aaff 100%);
+  background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%); /* Changed from blue hover */
   color: #000000;
-  box-shadow: 
-      0 5px 15px rgba(0, 136, 255, 0.3),
-      0 0 20px rgba(0, 136, 255, 0.2);
+  box-shadow:
+      0 5px 15px rgba(0, 255, 0, 0.3), /* Changed from blue shadow */
+      0 0 20px rgba(0, 255, 0, 0.2); /* Changed from blue shadow */
 }
 
 .clear-button {
-  background: linear-gradient(135deg, #cc0000 0%, #ff0000 100%);
-  color: #ffffff;
-  border: 1px solid #ff0000;
+  background: linear-gradient(135deg, #001100 0%, #003300 100%); /* Changed from red */
+  color: #00ff00; /* Changed to green */
+  border: 1px solid #00ff00; /* Changed to green */
 }
 
 .clear-button:hover {
-  background: linear-gradient(135deg, #ff0000 0%, #ff3333 100%);
+  background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%); /* Changed from red hover */
   color: #000000;
-  box-shadow: 
-      0 5px 15px rgba(255, 0, 0, 0.3),
-      0 0 20px rgba(255, 0, 0, 0.2);
+  box-shadow:
+      0 5px 15px rgba(0, 255, 0, 0.3), /* Changed from red shadow */
+      0 0 20px rgba(0, 255, 0, 0.2); /* Changed from red shadow */
 }
 
 /* Content Display */
@@ -571,31 +571,31 @@ body {
   .terminal-container {
       padding: 10px;
   }
-  
+
   .terminal {
       width: 100%;
       max-width: none;
   }
-  
+
   .terminal-content {
       padding: 20px 15px;
       font-size: 13px;
   }
-  
+
   .button-grid {
       grid-template-columns: 1fr;
       gap: 10px;
   }
-  
+
   .terminal-nav-button {
       padding: 12px 15px;
       font-size: 13px;
   }
-  
+
   .welcome-title {
       font-size: 16px;
   }
-  
+
   .welcome-text {
       font-size: 13px;
   }
@@ -614,20 +614,20 @@ body {
   .terminal-header {
       padding: 10px 15px;
   }
-  
+
   .terminal-content {
       padding: 15px 10px;
       font-size: 12px;
   }
-  
+
   .welcome-title {
       font-size: 14px;
   }
-  
+
   .welcome-text {
       font-size: 12px;
   }
-  
+
   .terminal-nav-button {
       padding: 10px 12px;
       font-size: 12px;
