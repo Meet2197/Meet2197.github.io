@@ -59,17 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="project-divider">───────────────────────────────────────────────────────────────</div>
 
                     <div class="project-item">
-                        <h4>1. Terminal Portfolio 💻</h4>
-                        <ul>
-                            <li>Interactive terminal-style portfolio website</li>
-                            <li>Command-line interface with clickable buttons</li>
-                            <li>Technologies: HTML, CSS, JavaScript, GitHub Actions</li>
-                            <li><a href="https://github.com/Meet2197/Meet2197.github.io" target="_blank">→ View Repository</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="project-item">
-                        <h4>2. LIMS System 🛒</h4>
+                        <h4>1. LIMS System 🔍</h4>
                         <ul>
                             <li>Laboratory Information Management System</li>
                             <li>Streamlines laboratory operations & improves data accuracy</li>
@@ -79,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="project-item">
-                        <h4>3. JSON Viewer 📋</h4>
+                        <h4>2. JSON Viewer 📋</h4>
                         <ul>
                             <li>Tool for observing and analyzing JSON files</li>
                             <li>Clean interface for data visualization</li>
@@ -89,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="project-item">
-                        <h4>4. DRE API 🌤️</h4>
+                        <h4>3. DRE API 🗄️</h4>
                         <ul>
                             <li>Java-based API development project</li>
                             <li>Backend services and data processing</li>
@@ -99,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="project-item">
-                        <h4>5. Psychological Data Analysis 🧠</h4>
+                        <h4>4. Psychological Data Analysis 🧠</h4>
                         <ul>
                             <li>Advanced statistical analysis of psychological datasets</li>
                             <li>Data processing and visualization tools</li>
@@ -109,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="project-item">
-                        <h4>6. Metabolites Visualisation 🔬</h4>
+                        <h4>5. Metabolites Visualisation 🔬</h4>
                         <ul>
                             <li>Bioinformatics tool for metabolite data visualization</li>
                             <li>Scientific data analysis and reporting</li>
@@ -198,8 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <p><strong>🌟 Featured Repositories:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/Meet2197/Meet2197.github.io" target="_blank">📱 Terminal Portfolio</a> - Interactive portfolio website</li>
-                    <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">🔬 LIMS System</a> - Laboratory Information Management</li>
+                    <li><a href="https://github.com/Meet2197/LIMS-system" target="_blank">🔍 LIMS System</a> - Laboratory Information Management</li>
                     <li><a href="https://github.com/Meet2197/JSON-viewer" target="_blank">📋 JSON Viewer</a> - Data visualization tool</li>
                     <li><a href="https://github.com/Meet2197/DRE-Api" target="_blank">⚡ DRE API</a> - Java-based API services</li>
                     <li><a href="https://github.com/Meet2197/Psychological-data-analysis" target="_blank">🧠 Psychological Data Analysis</a> - Python analytics</li>
@@ -327,11 +316,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Terminal UI Functions ---
     function appendCommandToTerminal(command) {
-        const newPromptLine = document.createElement('div');
-        newPromptLine.classList.add('terminal-line');
-        newPromptLine.innerHTML = `<span class="prompt">user@portfolio:~$</span> <span class="command">${command}</span>`;
-        terminalContent.insertBefore(newPromptLine, document.querySelector('.terminal-prompt'));
-    }
+    const newPromptLine = document.createElement('div');
+    newPromptLine.classList.add('terminal-line');
+    // Changed from 𝛑 ~$&nbsp; to 𝛑 ~&nbsp;
+    newPromptLine.innerHTML = `<span class="prompt">𝛑 ~&nbsp;</span> <span class="command">${command}</span>`; 
+    terminalContent.insertBefore(newPromptLine, document.querySelector('.terminal-prompt'));
+}
 
     // Enhanced show section function with animations
     function showSection(section) {
