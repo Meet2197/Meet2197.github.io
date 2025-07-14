@@ -38,11 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </ul>
                 <p><strong>Frameworks & Libraries:</strong></p>
                 <ul>
-                    <li>React.js - Interactive UIs</li>
-                    <li>Node.js - Server-side applications</li>
-                    <li>Vue.js - Progressive web apps</li>
-                    <li>Chart.js - Data visualization</li>
-                    <li>Firebase - Real-time databases</li>
+                    <li>Django - to develop web applications</li>
+                    <li>Node.js -to write command line tools and for server-side scripting </li>
+                    <li>OpenCV - for Computer Vision & AI development services </li>
+                    <li>Keras - used for distributed training of deep learning models </li>
+                    <li>PyTorch - accelerates the path from research prototyping to production deployment </li>
+                    <li>FastAPI - building APIs, managing server-side logic, and integrating databases </li>
+                    <li>NumPy - data cleaning, transformation and aggregation </li>
+                    <li>Pandas - data analysis and data manipulation </li>
+                    <li>Matplotlib - creating static, animated, and interactive visualizations </li>
                 </ul>
                 <p><strong>Scientific & Data Tools:</strong></p>
                 <ul>
