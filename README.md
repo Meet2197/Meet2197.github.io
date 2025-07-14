@@ -65,7 +65,7 @@ A backend service built in Java for robust API management and data routing.
 | Category         | Tools & Technologies                             |
 |------------------|--------------------------------------------------|
 | **Languages**    | Python, JavaScript, Java, R, HTML, CSS           |
-| **Frameworks**   | Django, React.js, Spring Boot                    |
+| **Frameworks**   | Django, React.js, Spring Boot, FastAPI, Tesnoflow|
 | **Data Science** | Pandas, NumPy, Matplotlib, Seaborn               |
 | **DevOps**       | Docker, GitHub Actions, Git, Linux               |
 | **Databases**    | SQLite, PostgreSQL                               |

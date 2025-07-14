@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Python - Data analysis & bioinformatics</li>
                     <li>Java - Enterprise applications</li>
                     <li>R - Statistical analysis & visualization</li>
-                    <li>HTML5 & CSS3 - Modern web interfaces</li>
                 </ul>
                 <p><strong>Frameworks & Libraries:</strong></p>
                 <ul>
@@ -170,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Technologies & Tools:</strong></p>
                 <ul>
                     <li>Languages: JavaScript, Python, Java, R, HTML/CSS</li>
-                    <li>Frameworks: React.js, Node.js, Vue.js</li>
+                    <li>Frameworks: React.js, Django, Flask, FastAPI , Keras, PyTorch, TensorFlow </li>
                     <li>Databases: Postgres</li>
                     <li>Tools: Git, GitHub, Gitlab</li>
                 </ul>
