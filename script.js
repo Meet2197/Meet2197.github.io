@@ -31,30 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>$ ls -la skills/</h3>
                 <p><strong>Programming Languages:</strong></p>
                 <ul>
-                    <li>JavaScript (ES6+) - Full-stack development</li>
-                    <li>Python - Data analysis & bioinformatics</li>
-                    <li>Java - Enterprise applications</li>
-                    <li>R - Statistical analysis & visualization</li>
+                    <li>🟨 JavaScript (ES6+) - Full-stack development</li>
+                    <li>🐍 Python - Data analysis & bioinformatics</li>
+                    <li>☕ Java - Enterprise applications</li>
+                    <li>📈 R - Statistical analysis & visualization</li>
                 </ul>
                 <p><strong>Frameworks & Libraries:</strong></p>
                 <ul>
-                    <li>Django - to develop web applications</li>
-                    <li>Node.js -to write command line tools and for server-side scripting </li>
-                    <li>OpenCV - for Computer Vision & AI development services </li>
-                    <li>Keras - used for distributed training of deep learning models </li>
-                    <li>PyTorch - accelerates the path from research prototyping to production deployment </li>
-                    <li>FastAPI - building APIs, managing server-side logic, and integrating databases </li>
-                    <li>NumPy - data cleaning, transformation and aggregation </li>
-                    <li>Pandas - data analysis and data manipulation </li>
-                    <li>Matplotlib - creating static, animated, and interactive visualizations </li>
+                    <li>🐍 Django - to develop web applications</li>
+                    <li>🟩 Node.js - to write command line tools and for server-side scripting</li>
+                    <li>👁️‍🗨️ OpenCV - for Computer Vision & AI development services</li>
+                    <li>🧠 Keras - used for distributed training of deep learning models</li>
+                    <li>🔥 PyTorch - accelerates the path from research prototyping to production deployment</li>
+                    <li⚡ FastAPI - building APIs, managing server-side logic, and integrating databases</li>
+                    <li>🔢 NumPy - data cleaning, transformation and aggregation</li>
+                    <li>🧾 Pandas - data analysis and data manipulation</li>
+                    <li>📊 Matplotlib - creating static, animated, and interactive visualizations</li>
                 </ul>
                 <p><strong>Scientific & Data Tools:</strong></p>
                 <ul>
-                    <li>LIMS Systems - Laboratory data management</li>
-                    <li>MongoDB - NoSQL databases</li>
-                    <li>APIs - RESTful services</li>
-                    <li>Git & GitHub - Version control</li>
-                    <li>JSON Processing - Data interchange</li>
+                        <li>🧪 LIMS Systems - Laboratory data management</li>
+                        <li>🍃 MongoDB - NoSQL databases</li>
+                        <li>🔗 APIs - RESTful services</li>
+                        <li>🔧 Git & GitHub - Version control</li>
+                        <li>📄 JSON Processing - Data interchange</li>
                 </ul>
             `
         },
