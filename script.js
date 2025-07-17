@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="project-item">
                         <h4>2. Data Management Hub 📋</h4>
                         <ul>
-                            <li>A central hub for data management within the "Product-oriented Learning" (PoL) project, focusing on efficient data handling and organization.</li>
+                            <li>A central hub for data management within the PoL EXC project, focusing on efficient data handling and organization.</li>
                             <li>Technologies: JavaScript, MIT License</li>
                             <li><a href="https://meet2197.github.io/PoL_Datamgmt-hub/" target="_blank">→ View Repository</a></li>
                         </ul>
