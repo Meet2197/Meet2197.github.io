@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <li>🍃 MongoDB - NoSQL databases</li>
                         <li>🔗 APIs - RESTful services</li>
                         <li>🔧 Git & GitHub - Version control</li>
-                        <li>📄 JSON Processing - Data interchange</li>
+                        <li>📄 Data Management Hub - Platform for Researchers</li>
                 </ul>
             `
         },
@@ -76,12 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="project-item">
-                        <h4>2. JSON Viewer 📋</h4>
+                        <h4>2. Data Management Hub 📋</h4>
                         <ul>
-                            <li>Tool for observing and analyzing JSON files</li>
-                            <li>Clean interface for data visualization</li>
+                            <li>A central hub for data management within the "Product-oriented Learning" (PoL) project, focusing on efficient data handling and organization.</li>
                             <li>Technologies: JavaScript, MIT License</li>
-                            <li><a href="https://github.com/Meet2197/JSON-viewer" target="_blank">→ View Repository</a></li>
+                            <li><a href="https://meet2197.github.io/PoL_Datamgmt-hub/" target="_blank">→ View Repository</a></li>
                         </ul>
                     </div>
 
