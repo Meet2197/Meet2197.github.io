@@ -35,7 +35,7 @@ A modern Laboratory Information Management System to help labs track samples, ex
 ---
 
 ### 💾 [PoL_Datamgmt-hub](https://github.com/Meet2197/PoL_Datamgmt-hub)
-A central hub for data management within the "Product-oriented Learning" (PoL) project, focusing on efficient data handling and organization.
+A central hub for data management within the PoL EXC, focusing on efficient data handling and organization.
 
 - Tech Stack: Javascript (Front End) , HTML , CSS
 - Use Case: Managing and organizing research data for reproducibility and accessibility.
