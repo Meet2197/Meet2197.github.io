@@ -34,13 +34,15 @@ A modern Laboratory Information Management System to help labs track samples, ex
 
 ---
 
-### 📋 [JSON Viewer](https://github.com/Meet2197/JSON-viewer)
-Interactive tool to load, navigate, and analyze JSON datasets directly in the browser.
+💾 PoL_Datamgmt-hub
 
-- **Tech Stack**: Vanilla JavaScript + DOM APIs
-- **Use Case**: Developers and researchers working with structured API responses
-- **License**: MIT
+A central hub for data management within the "Product-oriented Learning" (PoL) project, focusing on efficient data handling and organization.
 
+- Repository: [Meet2197/PoL_Datamgmt-hub](https://github.com/Meet2197/PoL_Datamgmt-hub)
+- Tech Stack: [List relevant technologies, e.g., Python, FastAPI, SQL, Docker]
+- Use Case: Managing and organizing research data for reproducibility and accessibility.
+- License: [Specify License, e.g., MIT, Apache 2.0]
+  
 ---
 
 ### 🌐 [DRE API](https://github.com/Meet2197/DRE-Api)
